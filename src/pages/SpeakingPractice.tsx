@@ -48,7 +48,27 @@ const SpeakingPractice = () => {
     listening,
     resetTranscript,
     browserSupportsSpeechRecognition,
+    browserSupportsContinuousListening, // Added this to potentially check for continuous listening support
+    interimTranscript, // Added this to potentially check for interim results
+    finalTranscript, // Added this to potentially check for final results
+    // Access the underlying SpeechRecognition instance if needed for more detailed events
+    // speechRecognition // This is not directly exposed by the hook, need to access it differently or rely on hook's events
   } = useSpeechRecognition();
+
+  // Effect to log errors from the SpeechRecognition instance
+  useEffect(() => {
+    if (SpeechRecognition.browserSupportsSpeechRecognition()) {
+      const recognition =
+        new (window as any).webkitSpeechRecognition() ||
+        new (window as any).SpeechRecognition();
+      recognition.onerror = (event: any) => {
+        console.error("Speech Recognition Error:", event.error);
+        console.error("Speech Recognition Error Message:", event.message);
+      };
+      // We don't need to start it here, just attach the error handler
+      // The hook manages the start/stop
+    }
+  }, []); // Empty dependency array means this runs once on mount
 
   const cleanAndSplitText = (text: string): string[] => {
     return text
@@ -323,6 +343,19 @@ const SpeakingPractice = () => {
       SpeechRecognition.startListening();
     }
   };
+
+  useEffect(() => {
+    console.log("SpeakingPractice component mounted.");
+    if (!browserSupportsSpeechRecognition) {
+      console.error("Browser does not support speech recognition.");
+    } else {
+      console.log("Browser supports speech recognition.");
+    }
+  }, [browserSupportsSpeechRecognition]);
+
+  useEffect(() => {
+    console.log("Listening state changed:", listening);
+  }, [listening]);
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
