@@ -304,14 +304,7 @@ const SpeakingPractice = () => {
     start();
   };
 
-  const handleRetry = () => {
-    if (isSoundPlaying) return; // Prevent retry while sound is playing
-    // Reset recording for current phrase
-    resetTranscript();
-    setShowCongratulations(false);
-  };
-
-  const handleNextPhrase = () => {
+  const handleNextPhrase = async () => {
     if (isSoundPlaying) return; // Prevent next phrase while sound is playing
     if (currentPhraseIndex < phrases.length - 1) {
       setCurrentPhraseIndex(currentPhraseIndex + 1);
@@ -320,7 +313,7 @@ const SpeakingPractice = () => {
       setShowCongratulations(false); // Hide congratulations for the new phrase
       setUserClickedRecord(true); // Set userClickedRecord to true *before* starting listening
       // Automatically start listening for the next phrase
-      SpeechRecognition.startListening();
+      await SpeechRecognition.startListening();
     }
   };
 
