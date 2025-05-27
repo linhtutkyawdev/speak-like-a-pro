@@ -160,10 +160,10 @@ const SpeakingPractice = () => {
   const currentPhrase = phrases[currentPhraseIndex];
   const progress = (completedPhrases / phrases.length) * 100;
 
-  const { languages, voices } = useVoices();
+  const { voices } = useVoices();
   const [selectedLanguage, setSelectedLanguage] = useState("en-US");
   const [selectedVoiceURI, setSelectedVoiceURI] = useState("");
-  const { speechStatus, start, pause, stop } = useSpeech({
+  const { start, stop } = useSpeech({
     text: currentPhrase.text,
     lang: selectedLanguage,
     voiceURI: selectedVoiceURI,
@@ -224,7 +224,7 @@ const SpeakingPractice = () => {
     const match = isMatch(currentPhrase.text, transcript);
     setShowCongratulations(match);
 
-    const handleSoundEnd = () => {
+    const handleSoundEnd = async () => {
       setIsSoundPlaying(false);
       if (match) {
         // Correct match
@@ -248,7 +248,7 @@ const SpeakingPractice = () => {
         // Incorrect match
         if (userClickedRecord) {
           // If user initiated recording and it was incorrect, restart listening
-          SpeechRecognition.startListening();
+          await SpeechRecognition.startListening();
         }
       }
     };
@@ -286,22 +286,22 @@ const SpeakingPractice = () => {
     soundEnabled,
   ]);
 
-  const handleRecord = () => {
+  const handleRecord = async () => {
     if (!listening) {
       setUserClickedRecord(true);
-      SpeechRecognition.startListening();
+      stop();
+      await SpeechRecognition.startListening();
     } else {
       setUserClickedRecord(false);
-      SpeechRecognition.stopListening();
+      await SpeechRecognition.stopListening();
     }
   };
 
-  const handlePlayPhrase = () => {
+  const handlePlayPhrase = async () => {
     if (listening) {
-      SpeechRecognition.stopListening();
+      await SpeechRecognition.stopListening();
     }
     start();
-    console.log(`Playing phrase: ${currentPhrase.text}`);
   };
 
   const handleRetry = () => {

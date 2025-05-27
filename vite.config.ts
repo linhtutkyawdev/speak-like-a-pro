@@ -7,8 +7,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 3000,
+    cors: true,
   },
-  plugins: [react()].filter(Boolean),
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
