@@ -22,6 +22,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 
+import AppHeader from "@/components/AppHeader";
 const Index = () => {
   const navigate = useNavigate();
 
@@ -156,33 +157,22 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-emerald-100">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-green-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="relative">
-                <Mic className="h-8 w-8 text-green-600 mr-2" />
-                <div className="absolute inset-0 h-8 w-8 bg-green-600 rounded-full blur-lg opacity-30 animate-pulse"></div>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                Speak Like a Pro
-              </span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" onClick={() => navigate("/auth")}>
-                Sign In
-              </Button>
-              <Button
-                className="bg-green-600 hover:bg-green-700"
-                onClick={() => navigate("/auth")}
-              >
-                Get Started
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <AppHeader
+        fullWidth={true}
+        rightContent={
+          <>
+            <Button variant="ghost" onClick={() => navigate("/signin")}>
+              Sign In
+            </Button>
+            <Button
+              className="bg-green-600 hover:bg-green-700"
+              onClick={() => navigate("/signup")}
+            >
+              Get Started
+            </Button>
+          </>
+        }
+      />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 lg:py-32">
@@ -211,7 +201,7 @@ const Index = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-lg px-8 py-3 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                onClick={() => navigate("/auth")}
+                onClick={() => navigate("/signup")}
               >
                 <Play className="mr-2 h-5 w-5" />
                 Start Speaking Today
@@ -339,7 +329,7 @@ const Index = () => {
                   {/* Action Button */}
                   <Button
                     className={`w-full bg-gradient-to-r ${path.color} hover:shadow-lg transform hover:scale-105 transition-all duration-300 group-hover:shadow-2xl`}
-                    onClick={() => navigate("/auth")}
+                    onClick={() => navigate("/signup")}
                   >
                     <Zap className="mr-2 h-4 w-4" />
                     Start Your Journey
@@ -414,7 +404,7 @@ const Index = () => {
                   <Button
                     className={`w-full bg-gradient-to-r ${course.color} hover:shadow-md transition-all duration-200`}
                     size="sm"
-                    onClick={() => navigate("/auth")}
+                    onClick={() => navigate("/signup")}
                   >
                     Explore Course
                   </Button>
@@ -516,7 +506,7 @@ const Index = () => {
           <Button
             size="lg"
             className="bg-white text-green-700 hover:bg-green-50 hover:shadow-lg transition-shadow duration-300 px-8 py-3 h-auto text-lg"
-            onClick={() => navigate("/auth")}
+            onClick={() => navigate("/signin")}
           >
             Get Started Now
           </Button>

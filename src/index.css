@@ -99,3 +99,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.bg-subtle-grid {
+  background-color: #ffffff; /* Fallback for browsers that don't support gradients */
+  background-image:
+    linear-gradient(0deg, #f0f0f0 1px, transparent 1px),
+    linear-gradient(90deg, #f0f0f0 1px, transparent 1px);
+  background-size: 20px 20px;
+}

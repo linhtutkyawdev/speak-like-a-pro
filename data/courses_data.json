@@ -1,0 +1,1595 @@
+[
+  {
+    "title": "Job Interview Mastery",
+    "description": "Ace your next job interview in English. This course covers everything from preparation and first impressions to tackling tough questions and negotiating your offer.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "business",
+    "level": "intermediate",
+    "duration": "3 weeks",
+    "rating": 4.9,
+    "skills": [
+      "Interview Preparation",
+      "Answering Behavioral Questions",
+      "Asking Insightful Questions",
+      "Salary Negotiation"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: The 'Tell Me About Yourself' Opener",
+        "sentences": [
+          {
+            "text": "I'm a software developer with over five years of experience in the fintech industry.",
+            "wordCount": 14
+          },
+          {
+            "text": "My journey began at XYZ University, where I majored in computer science.",
+            "wordCount": 12
+          },
+          {
+            "text": "I'm passionate about building scalable solutions that solve real-world problems.",
+            "wordCount": 11
+          },
+          {
+            "text": "In my previous role, I was responsible for leading the back-end development team.",
+            "wordCount": 14
+          }
+        ],
+        "phrases": [
+          "To summarize my background...",
+          "My key strengths are...",
+          "I'm proficient in...",
+          "This role aligns with my career goals",
+          "I was drawn to this opportunity because...",
+          "My experience includes..."
+        ]
+      },
+      {
+        "title": "Lesson 2: Answering Behavioral Questions (STAR Method)",
+        "sentences": [
+          {
+            "text": "A situation I faced was a tight project deadline with changing requirements.",
+            "wordCount": 12
+          },
+          {
+            "text": "My task was to reprioritize the features and manage the team's workload effectively.",
+            "wordCount": 14
+          },
+          {
+            "text": "The action I took was to implement daily stand-up meetings to improve communication.",
+            "wordCount": 14
+          },
+          {
+            "text": "As a result, we delivered the core product on time and received positive feedback.",
+            "wordCount": 14
+          }
+        ],
+        "phrases": [
+          "Let me give you an example",
+          "One time...",
+          "The outcome was...",
+          "What I learned from this was...",
+          "Tell me about a time when...",
+          "Describe a challenge you faced"
+        ]
+      },
+      {
+        "title": "Lesson 3: Discussing Strengths and Weaknesses",
+        "sentences": [
+          {
+            "text": "One of my greatest strengths is my ability to adapt to new technologies quickly.",
+            "wordCount": 15
+          },
+          {
+            "text": "I pride myself on my strong problem-solving and analytical skills.",
+            "wordCount": 10
+          },
+          {
+            "text": "In the past, I sometimes took on too much work myself.",
+            "wordCount": 11
+          },
+          {
+            "text": "However, I've learned to delegate tasks effectively to improve team efficiency.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "My colleagues would say I'm...",
+          "I'm known for my...",
+          "An area for improvement is...",
+          "I'm actively working on...",
+          "I've taken steps to address this",
+          "Turning a weakness into a strength"
+        ]
+      },
+      {
+        "title": "Lesson 4: Asking Insightful Questions",
+        "sentences": [
+          {
+            "text": "Can you describe the day-to-day responsibilities of this role?",
+            "wordCount": 10
+          },
+          {
+            "text": "What does success look like in this position in the first ninety days?",
+            "wordCount": 14
+          },
+          {
+            "text": "What are the biggest challenges the team is currently facing?",
+            "wordCount": 10
+          },
+          {
+            "text": "How would you describe the company culture and work environment?",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "I have a few questions for you",
+          "Could you tell me more about...",
+          "What are the opportunities for growth?",
+          "Can you describe the team dynamic?",
+          "What's the next step in the process?",
+          "Follow-up questions"
+        ]
+      },
+      {
+        "title": "Lesson 5: Following Up and Negotiating",
+        "sentences": [
+          {
+            "text": "Thank you for taking the time to speak with me today.",
+            "wordCount": 11
+          },
+          {
+            "text": "I am very excited about the possibility of joining your team.",
+            "wordCount": 11
+          },
+          {
+            "text": "Based on my experience and the market rate, I was expecting a salary in this range.",
+            "wordCount": 16
+          },
+          {
+            "text": "Is there any flexibility in the compensation package you've offered?",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "Thank you for your time",
+          "I look forward to hearing from you",
+          "Regarding the offer...",
+          "I'd like to discuss the salary",
+          "Based on my research...",
+          "Are benefits negotiable?"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Tech Industry Communication",
+    "description": "Navigate the fast-paced tech world. Learn to lead stand-ups, conduct code reviews, explain technical concepts to non-technical stakeholders, and manage incidents.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "business",
+    "level": "advanced",
+    "duration": "5 weeks",
+    "rating": 4.9,
+    "skills": [
+      "Agile Communication",
+      "Technical Presentations",
+      "Cross-functional Collaboration",
+      "Incident Management"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: Running an Effective Stand-up",
+        "sentences": [
+          {
+            "text": "Yesterday, I pushed the final commits for the user authentication service.",
+            "wordCount": 11
+          },
+          {
+            "text": "Today, I'll be focusing on writing the integration tests for the new API endpoint.",
+            "wordCount": 15
+          },
+          {
+            "text": "I'm currently blocked by a dependency issue in the shared library.",
+            "wordCount": 11
+          },
+          {
+            "text": "Does anyone have context on the recent changes to the deployment pipeline?",
+            "wordCount": 13
+          }
+        ],
+        "phrases": [
+          "Any blockers or impediments?",
+          "Let's take this offline",
+          "What's your progress on...",
+          "Let's sync up after this",
+          "The pull request is ready for review",
+          "Sprint goals"
+        ]
+      },
+      {
+        "title": "Lesson 2: Explaining Technical Trade-offs",
+        "sentences": [
+          {
+            "text": "We can build a quick solution now, but it will create significant technical debt.",
+            "wordCount": 14
+          },
+          {
+            "text": "Opting for a microservices architecture will improve scalability but increase operational complexity.",
+            "wordCount": 13
+          },
+          {
+            "text": "The trade-off here is between development speed and long-term maintainability.",
+            "wordCount": 11
+          },
+          {
+            "text": "To the product team, this means a slower initial launch but faster feature delivery later.",
+            "wordCount": 16
+          }
+        ],
+        "phrases": [
+          "On one hand...",
+          "On the other hand...",
+          "The bottleneck is...",
+          "The main constraint is...",
+          "The long-term impact is...",
+          "Let's weigh the pros and cons"
+        ]
+      },
+      {
+        "title": "Lesson 3: Conducting a Code Review",
+        "sentences": [
+          {
+            "text": "Overall, the logic looks solid, but I have a few minor suggestions.",
+            "wordCount": 12
+          },
+          {
+            "text": "Could we extract this logic into a separate helper function to improve reusability?",
+            "wordCount": 14
+          },
+          {
+            "text": "This variable name is a bit ambiguous; could we make it more descriptive?",
+            "wordCount": 13
+          },
+          {
+            "text": "Please add a comment here explaining why this unconventional approach was necessary.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "Looks good to me (LGTM)",
+          "Requesting changes",
+          "Nitpick (minor point)",
+          "This could be a potential edge case",
+          "Can you add a unit test for this?",
+          "Please resolve the merge conflicts"
+        ]
+      },
+      {
+        "title": "Lesson 4: The Incident Post-mortem",
+        "sentences": [
+          {
+            "text": "The incident began at 14:30 UTC and was resolved by 15:15 UTC.",
+            "wordCount": 13
+          },
+          {
+            "text": "The root cause was identified as a misconfiguration in the load balancer.",
+            "wordCount": 12
+          },
+          {
+            "text": "The immediate action was to roll back the recent deployment.",
+            "wordCount": 10
+          },
+          {
+            "text": "Our primary action item is to add automated checks to prevent this in the future.",
+            "wordCount": 15
+          }
+        ],
+        "phrases": [
+          "Timeline of events",
+          "Root cause analysis (RCA)",
+          "Impact assessment",
+          "Lessons learned",
+          "Action items",
+          "This was a blameless post-mortem"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "University Seminar Success",
+    "description": "Master the art of academic discourse. Learn to confidently state your thesis, support claims with evidence, challenge arguments respectfully, and lead engaging discussions.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "academic",
+    "level": "advanced",
+    "duration": "4 weeks",
+    "rating": 4.7,
+    "skills": [
+      "Academic Argumentation",
+      "Critical Thinking",
+      "Public Speaking",
+      "Active Listening"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Stating Your Position",
+        "sentences": [
+          {
+            "text": "In my view, the author's primary argument is fundamentally flawed.",
+            "wordCount": 10
+          },
+          {
+            "text": "The central thesis of my presentation is that economic factors were the main catalyst.",
+            "wordCount": 15
+          },
+          {
+            "text": "I would argue that we need to reconsider the traditional interpretation of this event.",
+            "wordCount": 14
+          },
+          {
+            "text": "My position is that the social implications far outweigh the political ones.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "I'd like to propose that...",
+          "My contention is that...",
+          "It seems to me that...",
+          "From my reading of the text...",
+          "The main point I want to make is...",
+          "I'd like to start by asserting..."
+        ]
+      },
+      {
+        "title": "Lesson 2: Supporting Your Claims",
+        "sentences": [
+          {
+            "text": "To support this point, I would like to cite the study by Johnson from 2021.",
+            "wordCount": 15
+          },
+          {
+            "text": "As evidence, consider the statistical data presented on page forty-five.",
+            "wordCount": 10
+          },
+          {
+            "text": "This is further substantiated by the primary source documents we reviewed last week.",
+            "wordCount": 13
+          },
+          {
+            "text": "A compelling example of this can be found in the second chapter.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "For instance...",
+          "To illustrate this point...",
+          "The evidence suggests that...",
+          "According to...",
+          "As noted by the author...",
+          "This is demonstrated by..."
+        ]
+      },
+      {
+        "title": "Lesson 3: Agreeing and Disagreeing Respectfully",
+        "sentences": [
+          {
+            "text": "I agree with Sarah's point, and I'd like to add that...",
+            "wordCount": 11
+          },
+          {
+            "text": "That's a valid perspective, however, have you considered the alternative?",
+            "wordCount": 10
+          },
+          {
+            "text": "I see your point, but I'm not entirely convinced that it applies here.",
+            "wordCount": 14
+          },
+          {
+            "text": "I respectfully disagree with that interpretation for a couple of reasons.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "To build on what you said...",
+          "I see what you mean, but...",
+          "I'm afraid I have to disagree",
+          "That's one way of looking at it, however...",
+          "I concur with that assessment",
+          "I take your point"
+        ]
+      },
+      {
+        "title": "Lesson 4: Asking Clarifying Questions",
+        "sentences": [
+          {
+            "text": "Could you elaborate on what you mean by 'cultural hegemony'?",
+            "wordCount": 9
+          },
+          {
+            "text": "I'm not sure I follow your line of reasoning, could you explain it again?",
+            "wordCount": 15
+          },
+          {
+            "text": "If I understand correctly, you are arguing that the conclusion is invalid?",
+            "wordCount": 12
+          },
+          {
+            "text": "What specific evidence are you basing that assertion on?",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "Could you clarify that?",
+          "What do you mean by...?",
+          "Are you suggesting that...?",
+          "So, are you saying that...?",
+          "Can you give an example?",
+          "I don't quite understand..."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The Independent Traveler",
+    "description": "Go beyond the basics. Learn to handle common travel problems like a pro, from missed flights and lost luggage to navigating local healthcare and changing your plans on the fly.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "travel",
+    "level": "intermediate",
+    "duration": "4 weeks",
+    "rating": 4.8,
+    "skills": [
+      "Problem Solving",
+      "Negotiation",
+      "Asking for Help",
+      "Making Arrangements"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: At the Airport - When Things Go Wrong",
+        "sentences": [
+          {
+            "text": "I seem to have missed my connecting flight, what are my options?",
+            "wordCount": 12
+          },
+          {
+            "text": "My luggage did not arrive on the carousel, where do I file a report?",
+            "wordCount": 14
+          },
+          {
+            "text": "My flight has been cancelled, could you please rebook me on the next available one?",
+            "wordCount": 15
+          },
+          {
+            "text": "I'm afraid my passport has been stolen, I need to contact my embassy.",
+            "wordCount": 13
+          }
+        ],
+        "phrases": [
+          "Missed connection",
+          "Lost baggage claim",
+          "Flight cancellation",
+          "Can I get a voucher?",
+          "Is there a hotel provided?",
+          "I need to make a call"
+        ]
+      },
+      {
+        "title": "Lesson 2: Accommodation Issues",
+        "sentences": [
+          {
+            "text": "The room is not what I expected from the pictures online.",
+            "wordCount": 11
+          },
+          {
+            "text": "The air conditioning in my room doesn't seem to be working.",
+            "wordCount": 11
+          },
+          {
+            "text": "I seem to have been overcharged for my stay, can we review the bill?",
+            "wordCount": 15
+          },
+          {
+            "text": "I need to check out late, is that possible and is there a fee?",
+            "wordCount": 15
+          }
+        ],
+        "phrases": [
+          "This is unacceptable",
+          "I'd like to speak to the manager",
+          "Can you move me to another room?",
+          "There's a problem with...",
+          "Late check-out",
+          "Review the invoice"
+        ]
+      },
+      {
+        "title": "Lesson 3: Health and Safety",
+        "sentences": [
+          {
+            "text": "Can you recommend a doctor or a clinic that is open now?",
+            "wordCount": 12
+          },
+          {
+            "text": "I'm not feeling well, I think I have food poisoning.",
+            "wordCount": 10
+          },
+          {
+            "text": "Where is the nearest pharmacy that is open twenty-four hours?",
+            "wordCount": 10
+          },
+          {
+            "text": "I need to report a theft to the local police.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "I need a doctor",
+          "It's an emergency",
+          "Local police station",
+          "I feel dizzy",
+          "Travel insurance",
+          "Can you call a taxi for me?"
+        ]
+      },
+      {
+        "title": "Lesson 4: Transportation and Navigation",
+        "sentences": [
+          {
+            "text": "The taxi meter isn't running, could you please turn it on?",
+            "wordCount": 11
+          },
+          {
+            "text": "I think this bus is going in the wrong direction.",
+            "wordCount": 9
+          },
+          {
+            "text": "I'd like to buy a train ticket to Berlin for tomorrow morning.",
+            "wordCount": 12
+          },
+          {
+            "text": "My rental car has a flat tire, can you send assistance?",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "Is this the right platform?",
+          "How much is the fare?",
+          "One-way ticket",
+          "Round-trip ticket",
+          "Roadside assistance",
+          "Can you show me on the map?"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "English for Creatives: Pitching Your Art",
+    "description": "Learn the language to articulate your artistic vision. This course covers writing artist statements, pitching projects to galleries, discussing your influences, and networking at events.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "intermediate",
+    "duration": "4 weeks",
+    "rating": 4.6,
+    "skills": [
+      "Persuasive Language",
+      "Articulate Expression",
+      "Storytelling",
+      "Professional Networking"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: The Artist Statement",
+        "sentences": [
+          {
+            "text": "My work explores the complex relationship between identity and memory.",
+            "wordCount": 10
+          },
+          {
+            "text": "Through my practice, I seek to challenge conventional notions of beauty.",
+            "wordCount": 11
+          },
+          {
+            "text": "I primarily work with mixed media, incorporating found objects into my paintings.",
+            "wordCount": 12
+          },
+          {
+            "text": "This series is a visual commentary on the effects of rapid urbanization.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "My work examines...",
+          "I'm interested in the theme of...",
+          "My process involves...",
+          "The core concept is...",
+          "This piece represents...",
+          "I'm influenced by..."
+        ]
+      },
+      {
+        "title": "Lesson 2: Pitching a Project or Exhibition",
+        "sentences": [
+          {
+            "text": "I am proposing a solo exhibition of my latest body of work.",
+            "wordCount": 12
+          },
+          {
+            "text": "The exhibition would feature ten large-scale oil paintings and three installations.",
+            "wordCount": 11
+          },
+          {
+            "text": "The central theme of the proposed show is 'Digital Traces'.",
+            "wordCount": 10
+          },
+          {
+            "text": "I believe this collection would resonate strongly with your gallery's audience.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "I'd like to submit a proposal",
+          "The concept behind the project is...",
+          "My target audience is...",
+          "Logistical requirements",
+          "I've attached my portfolio",
+          "Thank you for your consideration"
+        ]
+      },
+      {
+        "title": "Lesson 3: Discussing Your Work with a Collector",
+        "sentences": [
+          {
+            "text": "The inspiration for this piece came from a trip to the Scottish Highlands.",
+            "wordCount": 14
+          },
+          {
+            "text": "The technique I used involves applying multiple layers of translucent glaze.",
+            "wordCount": 11
+          },
+          {
+            "text": "This particular work took about three months to complete from start to finish.",
+            "wordCount": 14
+          },
+          {
+            "text": "I was trying to capture a feeling of nostalgia and fleeting time.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "The story behind this piece...",
+          "The materials I used are...",
+          "What I'm trying to convey is...",
+          "It's open to interpretation",
+          "Certificate of authenticity",
+          "Provenance of the work"
+        ]
+      },
+      {
+        "title": "Lesson 4: Networking at an Art Fair or Opening",
+        "sentences": [
+          {
+            "text": "Your work is incredibly powerful, I was particularly struck by the use of color.",
+            "wordCount": 14
+          },
+          {
+            "text": "I'm a painter based in Brooklyn, it's a pleasure to meet you.",
+            "wordCount": 12
+          },
+          {
+            "text": "What are your thoughts on the curation of this exhibition?",
+            "wordCount": 10
+          },
+          {
+            "text": "It was great connecting with you, let's stay in touch.",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "Congratulations on the show",
+          "I'm a big fan of your work",
+          "What are you working on now?",
+          "Can I give you my card?",
+          "Let's connect on Instagram",
+          "The art world"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Everyday English: The Absolute Basics",
+    "description": "The perfect starting point. This course covers the most essential words and phrases you need for simple, everyday interactions, from 'hello' to 'how are you?'",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "beginner",
+    "duration": "3 weeks",
+    "rating": 4.8,
+    "skills": [
+      "Basic Greetings",
+      "Simple Questions",
+      "Numbers & Time",
+      "Polite Expressions"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: Greetings & Farewells",
+        "sentences": [
+          { "text": "Hello, my name is Maria.", "wordCount": 5 },
+          { "text": "Good morning, it is a nice day.", "wordCount": 7 },
+          { "text": "It was nice to meet you.", "wordCount": 6 },
+          { "text": "Goodbye, have a great evening!", "wordCount": 5 }
+        ],
+        "phrases": [
+          "Hello! Hi!",
+          "Good morning",
+          "Good afternoon",
+          "Good evening",
+          "Goodbye! Bye!",
+          "See you later",
+          "Take care"
+        ]
+      },
+      {
+        "title": "Lesson 2: Simple Questions & Answers",
+        "sentences": [
+          { "text": "How are you today?", "wordCount": 4 },
+          { "text": "I am fine, thank you.", "wordCount": 5 },
+          { "text": "What is your name?", "wordCount": 4 },
+          { "text": "Where are you from?", "wordCount": 4 }
+        ],
+        "phrases": [
+          "How are you?",
+          "I'm fine, thanks",
+          "And you?",
+          "What's your name?",
+          "My name is...",
+          "Where are you from?",
+          "I'm from..."
+        ]
+      },
+      {
+        "title": "Lesson 3: Numbers, Days, & Time",
+        "sentences": [
+          { "text": "Today is Monday.", "wordCount": 3 },
+          { "text": "I have two brothers and one sister.", "wordCount": 7 },
+          { "text": "The meeting is at ten o'clock.", "wordCount": 6 },
+          { "text": "Excuse me, what time is it?", "wordCount": 6 }
+        ],
+        "phrases": [
+          "One, two, three",
+          "What time is it?",
+          "It is three thirty",
+          "Days of the week",
+          "Monday, Tuesday, Wednesday",
+          "Tomorrow",
+          "Yesterday"
+        ]
+      },
+      {
+        "title": "Lesson 4: Polite Expressions",
+        "sentences": [
+          { "text": "Could you help me, please?", "wordCount": 5 },
+          { "text": "Thank you so much for your help.", "wordCount": 7 },
+          { "text": "Excuse me, I have a question.", "wordCount": 6 },
+          { "text": "I'm sorry, I don't understand.", "wordCount": 5 }
+        ],
+        "phrases": [
+          "Please",
+          "Thank you",
+          "You're welcome",
+          "Excuse me",
+          "I'm sorry",
+          "No problem",
+          "Can you repeat that?"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Shopping & Services for Beginners",
+    "description": "Feel confident when you shop and use services. Learn essential vocabulary for the grocery store, clothes shopping, and ordering at a cafe.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "beginner",
+    "duration": "4 weeks",
+    "rating": 4.7,
+    "skills": [
+      "Asking for Prices",
+      "Making Simple Orders",
+      "Understanding Sizes & Colors",
+      "Paying for Goods"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: At the Grocery Store",
+        "sentences": [
+          { "text": "Where can I find the milk?", "wordCount": 6 },
+          { "text": "How much are these apples?", "wordCount": 5 },
+          {
+            "text": "I would like two kilos of potatoes, please.",
+            "wordCount": 8
+          },
+          { "text": "Do you accept credit cards?", "wordCount": 5 }
+        ],
+        "phrases": [
+          "How much is this?",
+          "A loaf of bread",
+          "A bottle of water",
+          "Shopping basket",
+          "Checkout",
+          "Cash or card?",
+          "Here is your receipt"
+        ]
+      },
+      {
+        "title": "Lesson 2: Clothes Shopping",
+        "sentences": [
+          { "text": "I'm looking for a blue t-shirt.", "wordCount": 6 },
+          { "text": "Do you have this in a medium size?", "wordCount": 8 },
+          { "text": "Where is the fitting room?", "wordCount": 5 },
+          { "text": "This is too expensive for me.", "wordCount": 6 }
+        ],
+        "phrases": [
+          "I'm just looking",
+          "What size is this?",
+          "Small, medium, large",
+          "Can I try this on?",
+          "Fitting room",
+          "On sale",
+          "I'll take it"
+        ]
+      },
+      {
+        "title": "Lesson 3: At the Cafe",
+        "sentences": [
+          { "text": "Can I have a coffee, please?", "wordCount": 6 },
+          { "text": "I would like a slice of chocolate cake.", "wordCount": 8 },
+          { "text": "Is that for here or to go?", "wordCount": 7 },
+          { "text": "Could we have the bill, please?", "wordCount": 6 }
+        ],
+        "phrases": [
+          "A table for two, please",
+          "The menu, please",
+          "For here or to go?",
+          "With milk and sugar",
+          "Anything else?",
+          "The bill, please",
+          "Keep the change"
+        ]
+      },
+      {
+        "title": "Lesson 4: At the Post Office",
+        "sentences": [
+          { "text": "I would like to mail this letter.", "wordCount": 7 },
+          {
+            "text": "How much is a stamp for a postcard to Japan?",
+            "wordCount": 11
+          },
+          { "text": "I need to send this package, please.", "wordCount": 7 },
+          { "text": "When will it arrive?", "wordCount": 4 }
+        ],
+        "phrases": [
+          "A stamp, please",
+          "To mail a letter",
+          "To send a package",
+          "Airmail",
+          "Sign here, please",
+          "Tracking number",
+          "Box and tape"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Getting Around Town",
+    "description": "Navigate your city with ease. Learn how to ask for and understand directions, take a taxi, and use public transportation like buses and trains.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "travel",
+    "level": "beginner",
+    "duration": "3 weeks",
+    "rating": 4.6,
+    "skills": [
+      "Asking for Directions",
+      "Understanding Directions",
+      "Using Taxis",
+      "Using Public Transport"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Asking for Basic Directions",
+        "sentences": [
+          { "text": "Excuse me, where is the nearest bank?", "wordCount": 7 },
+          { "text": "How can I get to the train station?", "wordCount": 8 },
+          { "text": "Is the museum far from here?", "wordCount": 6 },
+          { "text": "Sorry to bother you, I am lost.", "wordCount": 7 }
+        ],
+        "phrases": [
+          "Excuse me...",
+          "Where is the...?",
+          "How do I get to...?",
+          "Is there a ... near here?",
+          "I'm looking for...",
+          "I am lost",
+          "Can you help me?"
+        ]
+      },
+      {
+        "title": "Lesson 2: Understanding Directions",
+        "sentences": [
+          { "text": "Go straight ahead for two blocks.", "wordCount": 6 },
+          { "text": "Turn left at the next corner.", "wordCount": 6 },
+          { "text": "The pharmacy is on your right.", "wordCount": 6 },
+          { "text": "It's across the street from the park.", "wordCount": 7 }
+        ],
+        "phrases": [
+          "Go straight",
+          "Turn left",
+          "Turn right",
+          "It's on the corner",
+          "It's next to...",
+          "Across the street",
+          "You can't miss it"
+        ]
+      },
+      {
+        "title": "Lesson 3: Taking a Taxi",
+        "sentences": [
+          { "text": "Please take me to this address.", "wordCount": 6 },
+          { "text": "How much will it be to the airport?", "wordCount": 8 },
+          { "text": "Could you stop here, please?", "wordCount": 5 },
+          { "text": "How long will the ride take?", "wordCount": 6 }
+        ],
+        "phrases": [
+          "Taxi!",
+          "To the airport, please",
+          "How much is it?",
+          "Please use the meter",
+          "Stop here, please",
+          "I'm in a hurry",
+          "Do you have change?"
+        ]
+      },
+      {
+        "title": "Lesson 4: Using Public Transport",
+        "sentences": [
+          { "text": "One ticket to the city center, please.", "wordCount": 7 },
+          { "text": "Which bus goes to the university?", "wordCount": 6 },
+          { "text": "Does this train stop at Grand Central?", "wordCount": 7 },
+          { "text": "What is the next stop?", "wordCount": 5 }
+        ],
+        "phrases": [
+          "A one-way ticket",
+          "A round-trip ticket",
+          "Which platform?",
+          "The next stop",
+          "Bus stop",
+          "Train station",
+          "Is this seat taken?"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Making Friends: First Conversations",
+    "description": "Learn how to start conversations and make new friends. This course covers simple introductions, talking about your life, and finding common interests.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "beginner",
+    "duration": "4 weeks",
+    "rating": 4.7,
+    "skills": [
+      "Introducing Yourself",
+      "Talking About Your Job & Family",
+      "Discussing Hobbies",
+      "Making Invitations"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Introducing Yourself and Others",
+        "sentences": [
+          { "text": "Hi, I'm Alex. It's nice to meet you.", "wordCount": 8 },
+          {
+            "text": "I'm from Brazil, but I live in London now.",
+            "wordCount": 10
+          },
+          { "text": "This is my friend, Sofia.", "wordCount": 5 },
+          { "text": "How do you two know each other?", "wordCount": 7 }
+        ],
+        "phrases": [
+          "Nice to meet you",
+          "I'm from...",
+          "I live in...",
+          "Let me introduce you",
+          "This is...",
+          "Pleased to meet you",
+          "What about you?"
+        ]
+      },
+      {
+        "title": "Lesson 2: Talking About Your Job and Studies",
+        "sentences": [
+          { "text": "I am a student at the local university.", "wordCount": 8 },
+          { "text": "I work as a graphic designer.", "wordCount": 6 },
+          { "text": "What do you do for a living?", "wordCount": 7 },
+          { "text": "I really enjoy my job.", "wordCount": 5 }
+        ],
+        "phrases": [
+          "What do you do?",
+          "I am a...",
+          "I work for...",
+          "I am a student",
+          "I study...",
+          "Do you like your job?",
+          "It's very interesting"
+        ]
+      },
+      {
+        "title": "Lesson 3: Talking About Hobbies and Interests",
+        "sentences": [
+          { "text": "In my free time, I like to read books.", "wordCount": 9 },
+          { "text": "What kind of music do you listen to?", "wordCount": 8 },
+          { "text": "I love watching movies on the weekend.", "wordCount": 7 },
+          { "text": "Do you play any sports?", "wordCount": 5 }
+        ],
+        "phrases": [
+          "What are your hobbies?",
+          "I like...",
+          "I enjoy...",
+          "I'm interested in...",
+          "In my free time...",
+          "Do you like...?",
+          "Me too!"
+        ]
+      },
+      {
+        "title": "Lesson 4: Making Simple Plans",
+        "sentences": [
+          {
+            "text": "Would you like to get a coffee sometime?",
+            "wordCount": 8
+          },
+          { "text": "Are you free on Saturday afternoon?", "wordCount": 6 },
+          { "text": "That sounds great, I'd love to.", "wordCount": 6 },
+          {
+            "text": "Sorry, I'm busy then, maybe another time?",
+            "wordCount": 7
+          }
+        ],
+        "phrases": [
+          "Do you want to...?",
+          "Let's go to...",
+          "Are you free on...?",
+          "What time?",
+          "That sounds fun",
+          "I can't, I'm busy",
+          "Maybe next time"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Handling Everyday Problems",
+    "description": "Life isn't always perfect. Learn the essential English to handle common problems confidently, from returning a broken product to complaining about bad service.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "intermediate",
+    "duration": "4 weeks",
+    "rating": 4.8,
+    "skills": [
+      "Complaint & Resolution",
+      "Returning Purchases",
+      "Explaining Technical Issues",
+      "Customer Service Interaction"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: Returning a Faulty Product",
+        "sentences": [
+          {
+            "text": "I bought this coffee machine here last week, and it's stopped working.",
+            "wordCount": 13
+          },
+          {
+            "text": "I'd like to return this item because it's the wrong size.",
+            "wordCount": 11
+          },
+          {
+            "text": "I still have the receipt and all the original packaging.",
+            "wordCount": 10
+          },
+          {
+            "text": "Could I get a full refund instead of store credit?",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "I'd like to make a return",
+          "It's faulty! It's broken!",
+          "Here is the receipt",
+          "Under warranty",
+          "Exchange for a new one",
+          "A full refund",
+          "Store credit"
+        ]
+      },
+      {
+        "title": "Lesson 2: Complaining at a Restaurant",
+        "sentences": [
+          {
+            "text": "Excuse me, I believe there is a mistake on our bill.",
+            "wordCount": 11
+          },
+          {
+            "text": "I'm afraid my steak is undercooked, I asked for it well-done.",
+            "wordCount": 12
+          },
+          {
+            "text": "We have been waiting for our food for over forty-five minutes.",
+            "wordCount": 11
+          },
+          {
+            "text": "This isn't what I ordered, I think there has been a mix-up.",
+            "wordCount": 13
+          }
+        ],
+        "phrases": [
+          "Excuse me, waiter",
+          "My food is cold",
+          "A mistake on the bill",
+          "This is not what I ordered",
+          "Could I speak to the manager?",
+          "The service was very slow",
+          "A hair in my food"
+        ]
+      },
+      {
+        "title": "Lesson 3: Dealing with Service Issues (Internet/Phone)",
+        "sentences": [
+          {
+            "text": "Hi, I'm calling because my internet connection has been down all day.",
+            "wordCount": 12
+          },
+          {
+            "text": "I have already tried restarting my router, but it didn't help.",
+            "wordCount": 11
+          },
+          {
+            "text": "Can you tell me if there is a service outage in my area?",
+            "wordCount": 13
+          },
+          {
+            "text": "I need to schedule a technician to come and look at it.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "My internet is not working",
+          "Customer support",
+          "My account number is...",
+          "Service outage",
+          "Reference number",
+          "Schedule a technician",
+          "Slow connection speed"
+        ]
+      },
+      {
+        "title": "Lesson 4: Minor Travel Mishaps",
+        "sentences": [
+          {
+            "text": "My hotel room key card doesn't seem to be working.",
+            "wordCount": 10
+          },
+          {
+            "text": "I think I left my sunglasses in the taxi, is there a lost and found?",
+            "wordCount": 16
+          },
+          {
+            "text": "I need to change my flight reservation for tomorrow.",
+            "wordCount": 9
+          },
+          {
+            "text": "There appears to be an unexpected charge on my hotel bill.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "Lost and found",
+          "Change a reservation",
+          "My key card isn't working",
+          "The air conditioning is broken",
+          "I missed my train",
+          "Can I rebook?",
+          "Unexpected fee"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "English for Health and Wellness",
+    "description": "Take control of your health. Learn to clearly describe symptoms to a doctor, discuss fitness goals at a gym, and talk about nutrition and mental well-being.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "intermediate",
+    "duration": "4 weeks",
+    "rating": 4.7,
+    "skills": [
+      "Describing Symptoms",
+      "Understanding Medical Advice",
+      "Fitness & Nutrition Vocabulary",
+      "Discussing Well-being"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: The Detailed Doctor's Visit",
+        "sentences": [
+          {
+            "text": "The pain is a dull ache that gets worse at night.",
+            "wordCount": 10
+          },
+          {
+            "text": "I have been feeling dizzy and I have no appetite.",
+            "wordCount": 10
+          },
+          {
+            "text": "I am allergic to penicillin, so I cannot take that.",
+            "wordCount": 10
+          },
+          {
+            "text": "What are the side effects of this medication?",
+            "wordCount": 8
+          }
+        ],
+        "phrases": [
+          "Make an appointment",
+          "A sharp pain or a dull ache",
+          "I feel nauseous",
+          "I have a prescription",
+          "Allergic reaction",
+          "Follow-up appointment",
+          "Referral to a specialist"
+        ]
+      },
+      {
+        "title": "Lesson 2: Joining a Gym & Fitness",
+        "sentences": [
+          {
+            "text": "I'd like to sign up for a monthly gym membership.",
+            "wordCount": 9
+          },
+          {
+            "text": "Can you show me how to use the leg press machine?",
+            "wordCount": 11
+          },
+          {
+            "text": "What kind of fitness classes do you offer in the evenings?",
+            "wordCount": 11
+          },
+          {
+            "text": "My main goal is to improve my cardiovascular fitness.",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "Sign up for a membership",
+          "Personal trainer",
+          "Locker room",
+          "Treadmill or Elliptical",
+          "Weight training",
+          "Yoga class",
+          "Warm-up and cool-down"
+        ]
+      },
+      {
+        "title": "Lesson 3: Talking About Diet and Nutrition",
+        "sentences": [
+          {
+            "text": "I am trying to cut down on processed foods.",
+            "wordCount": 8
+          },
+          {
+            "text": "Does this meal contain any nuts? I have a serious allergy.",
+            "wordCount": 11
+          },
+          {
+            "text": "I'm looking for high-protein, vegetarian meal options.",
+            "wordCount": 7
+          },
+          { "text": "How many calories are in this serving?", "wordCount": 7 }
+        ],
+        "phrases": [
+          "A balanced diet",
+          "Food allergy",
+          "Lactose intolerant",
+          "Vegan or Vegetarian",
+          "Cutting down on sugar",
+          "Staying hydrated",
+          "Nutritional information"
+        ]
+      },
+      {
+        "title": "Lesson 4: Discussing Mental Well-being",
+        "sentences": [
+          {
+            "text": "I have been feeling very stressed and anxious lately.",
+            "wordCount": 9
+          },
+          {
+            "text": "It's important to find a good work-life balance.",
+            "wordCount": 8
+          },
+          {
+            "text": "I find that meditation helps me to clear my mind.",
+            "wordCount": 10
+          },
+          {
+            "text": "I think I might be experiencing burnout from my job.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "Feeling stressed or anxious",
+          "Feeling burnt out",
+          "Mental health is important",
+          "Work-life balance",
+          "To de-stress or to relax",
+          "Taking a break",
+          "Getting enough sleep"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Your Home: Renting and Living",
+    "description": "Master the English needed for your home life. Learn how to find an apartment, communicate with landlords, set up utilities, and interact with neighbors.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "intermediate",
+    "duration": "5 weeks",
+    "rating": 4.9,
+    "skills": [
+      "Apartment Hunting",
+      "Communicating with Landlords",
+      "Household Problems",
+      "Neighborly Interactions"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: The Apartment Search",
+        "sentences": [
+          {
+            "text": "I'm calling about the two-bedroom apartment listed online.",
+            "wordCount": 9
+          },
+          {
+            "text": "Is it possible to schedule a viewing sometime this week?",
+            "wordCount": 10
+          },
+          {
+            "text": "Are any utilities, like water or gas, included in the rent?",
+            "wordCount": 11
+          },
+          {
+            "text": "What is the policy on having pets in the apartment?",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "I'm looking for an apartment",
+          "Schedule a viewing",
+          "Security deposit",
+          "Lease agreement",
+          "Utilities included",
+          "Furnished or Unfurnished",
+          "Application form"
+        ]
+      },
+      {
+        "title": "Lesson 2: Communicating with Landlords & Agencies",
+        "sentences": [
+          {
+            "text": "I'm writing to report that the faucet in the kitchen is leaking.",
+            "wordCount": 12
+          },
+          {
+            "text": "The heater in my bedroom is not working, and the room is very cold.",
+            "wordCount": 15
+          },
+          {
+            "text": "Could you please let me know when a repair person can come?",
+            "wordCount": 12
+          },
+          {
+            "text": "I would like to give my thirty-day notice to vacate the apartment.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "Report an issue",
+          "Request a repair",
+          "The sink is clogged",
+          "There is a power outage",
+          "Renew the lease",
+          "Give notice",
+          "My rent payment"
+        ]
+      },
+      {
+        "title": "Lesson 3: Setting Up Home Services",
+        "sentences": [
+          {
+            "text": "I would like to set up a new internet account for my address.",
+            "wordCount": 12
+          },
+          {
+            "text": "What are the different internet speed packages that you offer?",
+            "wordCount": 10
+          },
+          {
+            "text": "I need to schedule an installation appointment for next Tuesday.",
+            "wordCount": 10
+          },
+          {
+            "text": "Can you please help me understand my first electricity bill?",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "Set up an account",
+          "Internet provider",
+          "Gas and electricity",
+          "Utility bill",
+          "Installation appointment",
+          "Customer service",
+          "Transfer service"
+        ]
+      },
+      {
+        "title": "Lesson 4: Interacting with Neighbors",
+        "sentences": [
+          {
+            "text": "Hi, I just moved in next door, my name is Chris.",
+            "wordCount": 11
+          },
+          {
+            "text": "I'm sorry to bother you, but would you mind turning the music down a bit?",
+            "wordCount": 16
+          },
+          {
+            "text": "We are having a few friends over on Saturday, we'll try to keep the noise down.",
+            "wordCount": 17
+          },
+          {
+            "text": "A package for you was delivered to my apartment by mistake.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "Introduce myself",
+          "The new neighbor",
+          "Keep the noise down",
+          "Sorry to bother you",
+          "Having a party",
+          "Common areas",
+          "Receiving a package"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Digital Life & Social Media",
+    "description": "Speak naturally about the digital world. Learn to discuss your favorite apps, troubleshoot simple tech problems, and understand common online language and etiquette.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "intermediate",
+    "duration": "3 weeks",
+    "rating": 4.6,
+    "skills": [
+      "Discussing Technology",
+      "Simple Troubleshooting",
+      "Social Media Vocabulary",
+      "Online Communication"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Talking About Apps and Websites",
+        "sentences": [
+          {
+            "text": "What's your favorite app for listening to podcasts?",
+            "wordCount": 8
+          },
+          {
+            "text": "I use that website all the time for booking flights.",
+            "wordCount": 10
+          },
+          {
+            "text": "You should download this app, it's really useful for learning languages.",
+            "wordCount": 11
+          },
+          {
+            "text": "The user interface on their new update is a little confusing.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "Download an app",
+          "User-friendly",
+          "The latest update",
+          "Create an account",
+          "Log in and Log out",
+          "Notifications",
+          "User interface (UI)"
+        ]
+      },
+      {
+        "title": "Lesson 2: Simple Tech Troubleshooting",
+        "sentences": [
+          {
+            "text": "Have you tried turning it off and on again?",
+            "wordCount": 9
+          },
+          {
+            "text": "My phone battery has been draining really fast today.",
+            "wordCount": 9
+          },
+          {
+            "text": "I can't connect to the Wi-Fi network, do you know the password?",
+            "wordCount": 13
+          },
+          {
+            "text": "I think I need to clear my cache, the website is loading slowly.",
+            "wordCount": 13
+          }
+        ],
+        "phrases": [
+          "Restart the device",
+          "Check the connection",
+          "Forgot my password",
+          "Update the software",
+          "The app keeps crashing",
+          "Running low on storage",
+          "Poor signal"
+        ]
+      },
+      {
+        "title": "Lesson 3: Social Media Conversations",
+        "sentences": [
+          {
+            "text": "Did you see the photo I tagged you in on Instagram?",
+            "wordCount": 11
+          },
+          {
+            "text": "I'm going to post these vacation pictures on my feed later.",
+            "wordCount": 11
+          },
+          {
+            "text": "That video went viral on TikTok last week.",
+            "wordCount": 8
+          },
+          {
+            "text": "Just send me a direct message with your contact info.",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "Follow someone",
+          "Send a friend request",
+          "Like and comment",
+          "Share a post",
+          "Tag someone in a photo",
+          "Direct message (DM)",
+          "Go viral"
+        ]
+      }
+    ]
+  }
+]

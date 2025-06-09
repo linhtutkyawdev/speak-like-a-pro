@@ -93,14 +93,75 @@ export default {
           },
           "50%": {
             // Increased scale for a more noticeable pulse
-            transform: "rotate(180deg) scale(1.15)",
+            transform: "rotate(180deg) scale(1.2)",
             // Adjusted opacity for a smoother fade
-            opacity: "0",
+            opacity: "0.5",
           },
           "100%": {
             transform: "rotate(360deg) scale(1)",
             opacity: "1",
           },
+        },
+        "gradient-shift": {
+          "0%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+          "100%": {
+            "background-position": "0% 50%",
+          },
+        },
+        "green-pulse": {
+          "0%, 100%": {
+            "background-color": "rgba(52, 211, 153, 0.7)", // Tailwind green-400 with opacity
+          },
+          "50%": {
+            "background-color": "rgba(16, 185, 129, 0.9)", // Tailwind green-500 with opacity
+          },
+        },
+        float: {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "bounce-subtle": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-5px)",
+          },
+        },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
+        "spin-slow": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: ".5" },
+        },
+        "ping-fast": {
+          "75%, 100%": {
+            transform: "scale(2)",
+            opacity: "0",
+          },
+        },
+        "scale-up-down": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
         },
       },
       animation: {
@@ -109,6 +170,15 @@ export default {
         // Add the 'pulse-and-spin' animation
         "pulse-and-spin":
           "pulse-and-spin 60s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "gradient-shift": "gradient-shift 15s ease infinite",
+        "green-pulse": "green-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        float: "float 3s ease-in-out infinite",
+        "bounce-subtle": "bounce-subtle 1.5s ease-in-out infinite",
+        "fade-in": "fade-in 1s ease-out forwards",
+        "spin-slow": "spin-slow 3s linear infinite",
+        "pulse-slow": "pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "ping-fast": "ping-fast 1s cubic-bezier(0, 0, 0.2, 1) infinite",
+        "scale-up-down": "scale-up-down 2s ease-in-out infinite",
       },
     },
   },
