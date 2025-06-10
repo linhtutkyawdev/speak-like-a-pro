@@ -312,9 +312,13 @@ const Dashboard: React.FC = () => {
                   <Target className="w-4 h-4 mr-2" />
                   Browse All Courses
                 </Button>
-                <Button variant="outline" className="w-full">
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => navigate("/certificates")}
+                >
                   <Trophy className="w-4 h-4 mr-2" />
-                  View Certificate
+                  View Certificates
                 </Button>
               </CardContent>
             </Card>

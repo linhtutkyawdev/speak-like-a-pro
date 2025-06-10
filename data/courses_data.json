@@ -8,10 +8,9 @@
     "duration": "3 weeks",
     "rating": 4.9,
     "skills": [
-      "Interview Preparation",
-      "Answering Behavioral Questions",
-      "Asking Insightful Questions",
-      "Salary Negotiation"
+      "Professional & Academic Skills",
+      "Interpersonal Communication",
+      "Negotiation & Transaction"
     ],
     "featured": true,
     "lessons": [
@@ -170,12 +169,7 @@
     "level": "advanced",
     "duration": "5 weeks",
     "rating": 4.9,
-    "skills": [
-      "Agile Communication",
-      "Technical Presentations",
-      "Cross-functional Collaboration",
-      "Incident Management"
-    ],
+    "skills": ["Interpersonal Communication", "Problem Solving & Adaptability"],
     "featured": true,
     "lessons": [
       {
@@ -305,10 +299,9 @@
     "duration": "4 weeks",
     "rating": 4.7,
     "skills": [
-      "Academic Argumentation",
-      "Critical Thinking",
-      "Public Speaking",
-      "Active Listening"
+      "Professional & Academic Skills",
+      "Problem Solving & Adaptability",
+      "Interpersonal Communication"
     ],
     "featured": false,
     "lessons": [
@@ -439,10 +432,9 @@
     "duration": "4 weeks",
     "rating": 4.8,
     "skills": [
-      "Problem Solving",
-      "Negotiation",
-      "Asking for Help",
-      "Making Arrangements"
+      "Problem Solving & Adaptability",
+      "Negotiation & Transaction",
+      "Interpersonal Communication"
     ],
     "featured": true,
     "lessons": [
@@ -573,10 +565,9 @@
     "duration": "4 weeks",
     "rating": 4.6,
     "skills": [
-      "Persuasive Language",
-      "Articulate Expression",
-      "Storytelling",
-      "Professional Networking"
+      "Professional & Academic Skills",
+      "Interpersonal Communication",
+      "Storytelling & Presentation"
     ],
     "featured": false,
     "lessons": [
@@ -706,12 +697,7 @@
     "level": "beginner",
     "duration": "3 weeks",
     "rating": 4.8,
-    "skills": [
-      "Basic Greetings",
-      "Simple Questions",
-      "Numbers & Time",
-      "Polite Expressions"
-    ],
+    "skills": ["Basic Communication", "Social & Daily Interactions"],
     "featured": true,
     "lessons": [
       {
@@ -796,12 +782,7 @@
     "level": "beginner",
     "duration": "4 weeks",
     "rating": 4.7,
-    "skills": [
-      "Asking for Prices",
-      "Making Simple Orders",
-      "Understanding Sizes & Colors",
-      "Paying for Goods"
-    ],
+    "skills": ["Negotiation & Transaction", "Social & Daily Interactions"],
     "featured": true,
     "lessons": [
       {
@@ -892,12 +873,7 @@
     "level": "beginner",
     "duration": "3 weeks",
     "rating": 4.6,
-    "skills": [
-      "Asking for Directions",
-      "Understanding Directions",
-      "Using Taxis",
-      "Using Public Transport"
-    ],
+    "skills": ["Navigation & Travel", "Social & Daily Interactions"],
     "featured": false,
     "lessons": [
       {
@@ -982,12 +958,7 @@
     "level": "beginner",
     "duration": "4 weeks",
     "rating": 4.7,
-    "skills": [
-      "Introducing Yourself",
-      "Talking About Your Job & Family",
-      "Discussing Hobbies",
-      "Making Invitations"
-    ],
+    "skills": ["Social & Daily Interactions", "Interpersonal Communication"],
     "featured": false,
     "lessons": [
       {
@@ -1082,10 +1053,9 @@
     "duration": "4 weeks",
     "rating": 4.8,
     "skills": [
-      "Complaint & Resolution",
-      "Returning Purchases",
-      "Explaining Technical Issues",
-      "Customer Service Interaction"
+      "Problem Solving & Adaptability",
+      "Negotiation & Transaction",
+      "Customer Service & Support"
     ],
     "featured": true,
     "lessons": [
@@ -1219,12 +1189,7 @@
     "level": "intermediate",
     "duration": "4 weeks",
     "rating": 4.7,
-    "skills": [
-      "Describing Symptoms",
-      "Understanding Medical Advice",
-      "Fitness & Nutrition Vocabulary",
-      "Discussing Well-being"
-    ],
+    "skills": ["Health & Wellness", "Interpersonal Communication"],
     "featured": true,
     "lessons": [
       {
@@ -1355,10 +1320,9 @@
     "duration": "5 weeks",
     "rating": 4.9,
     "skills": [
-      "Apartment Hunting",
-      "Communicating with Landlords",
-      "Household Problems",
-      "Neighborly Interactions"
+      "Home & Living",
+      "Interpersonal Communication",
+      "Problem Solving & Adaptability"
     ],
     "featured": false,
     "lessons": [
@@ -1493,10 +1457,9 @@
     "duration": "3 weeks",
     "rating": 4.6,
     "skills": [
-      "Discussing Technology",
-      "Simple Troubleshooting",
-      "Social Media Vocabulary",
-      "Online Communication"
+      "Technology & Digital Literacy",
+      "Problem Solving & Adaptability",
+      "Social & Daily Interactions"
     ],
     "featured": false,
     "lessons": [

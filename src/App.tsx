@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ClerkProvider, useAuth } from "@clerk/clerk-react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
-import { ConvexReactClient, useConvexAuth } from "convex/react";
+import { ConvexReactClient } from "convex/react";
 import LandingPage from "./pages/LandingPage";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -16,6 +16,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import UserManagement from "./pages/UserManagement";
 import CourseDetails from "./pages/CourseDetails";
 import AdminRouteGuard from "./components/AdminRouteGuard";
+import CertificateView from "./pages/CertificateView";
+import CertificateDetailView from "./pages/CertificateDetailView";
 
 const HomeRedirect = () => {
   const { isSignedIn, isLoaded } = useAuth();
@@ -79,6 +81,11 @@ const App = () => (
                 <Route path="users" element={<UserManagement />} />
               </Route>
               <Route path="/course/:courseId" element={<CourseDetails />} />
+              <Route path="/certificates" element={<CertificateView />} />
+              <Route
+                path="/certificates/:certificateSlug"
+                element={<CertificateDetailView />}
+              />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

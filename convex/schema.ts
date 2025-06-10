@@ -24,7 +24,9 @@ const schema = defineSchema({
   })
     .index("by_category", ["category"])
     .index("by_level", ["level"])
-    .index("by_category_level", ["category", "level"]),
+    .index("by_category_level", ["category", "level"])
+    .index("by_rating", ["rating"])
+    .index("by_title", ["title"]),
   lessons: defineTable({
     courseId: v.id("courses"),
     title: v.string(), // Add a title for the lesson
@@ -32,7 +34,10 @@ const schema = defineSchema({
     phrases: v.array(v.string()), // Assuming phrases remain as strings for now
     createdAt: v.number(),
     updatedAt: v.number(),
-  }).index("by_course_id", ["courseId"]),
+  })
+    .index("by_course_id", ["courseId"])
+    .index("by_title", ["title"])
+    .index("by_course_id_and_title", ["courseId", "title"]),
 
   userProgress: defineTable({
     userId: v.id("users"),

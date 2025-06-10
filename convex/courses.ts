@@ -52,10 +52,13 @@ export const getCourses = query({
     level: v.optional(v.string()),
     searchTerm: v.optional(v.string()),
     category: v.optional(v.string()),
+    skills: v.optional(v.array(v.string())), // New: Optional array of skills
+    minRating: v.optional(v.number()), // New: Optional minimum rating
   },
   handler: async (ctx, args) => {
     let courses;
 
+    // Prioritize indexed queries
     if (args.category && args.level) {
       courses = await ctx.db
         .query("courses")
@@ -73,7 +76,14 @@ export const getCourses = query({
         .query("courses")
         .withIndex("by_level", (q) => q.eq("level", args.level!))
         .collect();
+    } else if (args.minRating !== undefined) {
+      // If only minRating is provided, use its index
+      courses = await ctx.db
+        .query("courses")
+        .withIndex("by_rating", (q) => q.gte("rating", args.minRating!))
+        .collect();
     } else {
+      // Fallback to full table scan if no specific indexed filters are applied
       courses = await ctx.db.query("courses").collect();
     }
 
@@ -84,7 +94,24 @@ export const getCourses = query({
             .toLowerCase()
             .includes(args.searchTerm.toLowerCase())
         : true;
-      return matchesSearch;
+
+      const matchesSkills =
+        args.skills && args.skills.length > 0
+          ? args.skills.some((skill) => course.skills.includes(skill))
+          : true;
+
+      // This condition ensures that if minRating was already used as the primary index,
+      // we don't re-filter it here. Otherwise, we apply the filter.
+      const minRatingAlreadyAppliedByIndex =
+        args.minRating !== undefined && !args.category && !args.level; // This means minRating was the *only* filter used for the initial query
+
+      const matchesRating = minRatingAlreadyAppliedByIndex
+        ? true // Already filtered by index
+        : args.minRating !== undefined
+          ? course.rating >= args.minRating
+          : true;
+
+      return matchesSearch && matchesSkills && matchesRating;
     });
 
     return Promise.all(
@@ -99,7 +126,7 @@ export const getCourses = query({
             course.imageUrl && course.imageUrl !== ""
               ? await ctx.storage.getUrl(course.imageUrl)
               : null,
-          lessonCount: lessons.length, // Add the lesson count
+          lessonCount: lessons.length,
         };
       })
     );
@@ -135,6 +162,16 @@ export const getCourse = query({
           ? await ctx.storage.getUrl(course.imageUrl)
           : null,
     };
+  },
+});
+
+export const getCourseByTitle = query({
+  args: { title: v.string() },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("courses")
+      .withIndex("by_title", (q) => q.eq("title", args.title))
+      .unique();
   },
 });
 

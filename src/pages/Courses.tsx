@@ -7,6 +7,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import CourseCard from "@/components/CourseCard";
 import AppHeader from "@/components/AppHeader";
 import AppHeaderRightContent from "@/components/AppHeaderRightContent"; // Import the new component
+import StarRatingInput from "@/components/ui/StarRatingInput"; // Import StarRatingInput
 import {
   BookOpen, // Still needed for academic category icon
   Star, // Still needed for featured courses section
@@ -43,6 +44,8 @@ const Courses = () => {
   const debouncedSearchTerm = useDebounce(searchTerm, 800); // Debounce search term by 800ms
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedLevel, setSelectedLevel] = useState("all");
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]); // New state for skills
+  const [selectedRating, setSelectedRating] = useState<number>(0); // New state for rating (0 means no filter)
 
   const categories = [
     {
@@ -92,31 +95,33 @@ const Courses = () => {
     },
   ];
 
+  const handleSkillToggle = (skill: string) => {
+    setSelectedSkills((prev) =>
+      prev.includes(skill) ? prev.filter((s) => s !== skill) : [...prev, skill]
+    );
+  };
+
   const courses = useQuery(api.courses.getCourses, {
     level: selectedLevel === "all" ? undefined : selectedLevel,
     searchTerm: debouncedSearchTerm === "" ? undefined : debouncedSearchTerm,
     category: selectedCategory === "all" ? undefined : selectedCategory,
+    skills: selectedSkills.length > 0 ? selectedSkills : undefined, // Pass selected skills
+    minRating: selectedRating > 0 ? selectedRating : undefined, // Pass selected rating
   });
 
+  // Handle loading state
   if (!courses) {
-    return (
-      <div className="bg-gradient-to-br from-green-50 via-white to-emerald-50">
-        <LoadingSpinner />
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
-  if (!courses) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-white to-emerald-50">
-        <LoadingSpinner />
-      </div>
-    );
-  }
+  // Dynamically extract all unique skills from courses data after courses are loaded
+  const allSkills = Array.from(
+    new Set(courses.flatMap((course) => course.skills))
+  ).sort(); // Sort skills alphabetically
 
   const filteredCourses = courses || [];
 
-  const featuredCourses = courses?.filter((course) => course.featured) || [];
+  const featuredCourses = courses.filter((course) => course.featured) || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
@@ -173,24 +178,71 @@ const Courses = () => {
             </div>
           </div>
 
-          {/* Level Filter */}
-          <div className="flex flex-wrap gap-2 overflow-x-auto pb-2">
+          <div className="flex items-center gap-4">
+            {/* Level Filter */}
+            <div className="flex flex-wrap gap-2 overflow-x-auto">
+              <span className="text-gray-600 font-medium py-2">
+                Filter by Level:
+              </span>
+              {levels.map((level) => (
+                <Button
+                  key={level.id}
+                  variant={selectedLevel === level.id ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedLevel(level.id)}
+                  className={`whitespace-nowrap ${
+                    selectedLevel === level.id
+                      ? `bg-gradient-to-r ${level.color} border-0 text-white`
+                      : "border-2 border-green-200 hover:border-green-400"
+                  }`}
+                >
+                  {level.name}
+                </Button>
+              ))}
+            </div>
+
+            {/* Rating Filter */}
+            <div className="flex items-center gap-2">
+              <span className="text-gray-600 font-medium">
+                Filter by Minimum Rating:
+              </span>
+              <StarRatingInput
+                value={selectedRating}
+                onChange={setSelectedRating}
+                maxStars={5}
+                size={24}
+              />
+              {selectedRating > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setSelectedRating(0)}
+                  className="text-red-500 hover:text-red-700"
+                >
+                  Clear
+                </Button>
+              )}
+            </div>
+          </div>
+
+          {/* Skills Filter */}
+          <div className="flex flex-wrap gap-2 overflow-x-auto pb-2 mt-4">
             <span className="text-gray-600 font-medium py-2">
-              Filter by Level:
+              Filter by Skills:
             </span>
-            {levels.map((level) => (
+            {allSkills.map((skill) => (
               <Button
-                key={level.id}
-                variant={selectedLevel === level.id ? "default" : "outline"}
+                key={skill}
+                variant={selectedSkills.includes(skill) ? "default" : "outline"}
                 size="sm"
-                onClick={() => setSelectedLevel(level.id)}
+                onClick={() => handleSkillToggle(skill)}
                 className={`whitespace-nowrap ${
-                  selectedLevel === level.id
-                    ? `bg-gradient-to-r ${level.color} border-0 text-white`
-                    : "border-2 border-green-200 hover:border-green-400"
+                  selectedSkills.includes(skill)
+                    ? `bg-gradient-to-r from-purple-500 to-indigo-500 border-0 text-white`
+                    : "border-2 border-gray-200 hover:border-gray-400"
                 }`}
               >
-                {level.name}
+                {skill}
               </Button>
             ))}
           </div>
