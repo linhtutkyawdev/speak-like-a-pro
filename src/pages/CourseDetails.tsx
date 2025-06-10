@@ -123,6 +123,20 @@ const CourseDetails = () => {
                               (lesson.sentences?.length || 0),
                             0
                           );
+                          const totalCourseContentWordCount = lessons.reduce(
+                            (sum, lesson) =>
+                              sum +
+                              (lesson.phrases?.reduce(
+                                (sentenceSum, p) =>
+                                  sentenceSum + p.split(" ").length,
+                                0
+                              ) || 0) +
+                              (lesson.sentences?.reduce(
+                                (sentenceSum, s) => sentenceSum + s.wordCount,
+                                0
+                              ) || 0),
+                            0
+                          );
                           const completedCourseContent = allUserProgress.reduce(
                             (sum, progress) =>
                               sum + progress.completedContentCount,
@@ -133,7 +147,7 @@ const CourseDetails = () => {
                               ? (completedCourseContent / totalCourseContent) *
                                 100
                               : 0;
-                          return `${completedCourseContent}/${totalCourseContent} (${courseProgressPercentage.toFixed(0)}%) Sentences or phrases completed`;
+                          return `${completedCourseContent}/${totalCourseContent} (${courseProgressPercentage.toFixed(0)}%), Total Points: ${totalCourseContentWordCount}`;
                         })()}
                       </span>
                       <Progress
@@ -174,6 +188,8 @@ const CourseDetails = () => {
           {lessons && lessons.length > 0 ? (
             lessons.map((lesson, index) => {
               const totalContent =
+                (lesson.phrases?.length || 0) + (lesson.sentences?.length || 0);
+              const totalLessonPoints =
                 (lesson.phrases?.reduce(
                   (sentenceSum, p) => sentenceSum + p.split(" ").length,
                   0
@@ -181,8 +197,7 @@ const CourseDetails = () => {
                 (lesson.sentences?.reduce(
                   (sentenceSum, s) => sentenceSum + s.wordCount,
                   0
-                ) || 0);
-              const totalLessonPoints = totalContent; // 1 word = 1 point
+                ) || 0); // 1 word = 1 point
               const lessonProgress = allUserProgress?.find(
                 (p) => p.lessonId === lesson._id
               );
