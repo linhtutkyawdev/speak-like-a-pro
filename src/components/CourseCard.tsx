@@ -18,24 +18,26 @@ interface CourseCardProps {
     skills: string[];
     featured?: boolean;
     totalLessons: number; // Add totalLessons to the course prop
+    totalCourseContent: number; // New prop for total content in the course
   };
   userPoints: number; // Current user's total points
   levelPointsThreshold: { [key: string]: number }; // Thresholds for each level
-  completedLessonsCount: number; // New prop for completed lessons
+  completedCourseContent: number; // New prop for completed content
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
   course,
   userPoints,
   levelPointsThreshold,
-  completedLessonsCount, // Destructure new prop
+  completedCourseContent, // Destructure new prop
 }) => {
   const navigate = useNavigate();
 
   const requiredPoints = levelPointsThreshold[course.level] || 0;
   const isLocked = userPoints < requiredPoints;
   const isCompleted =
-    completedLessonsCount === course.totalLessons && course.totalLessons > 0; // Check if all lessons are completed
+    course.totalCourseContent > 0 &&
+    completedCourseContent === course.totalCourseContent; // Check if all content is completed
 
   return (
     <Link

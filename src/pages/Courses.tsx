@@ -298,19 +298,25 @@ const Courses = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredCourses.map((course) => {
-                const completedLessonsCount =
-                  allUserProgress?.filter(
-                    (progress) =>
-                      progress.courseId === course._id &&
-                      progress.completedContentCount > 0 // Assuming any progress means the lesson is started/completed
-                  ).length || 0;
+                const completedCourseContent =
+                  allUserProgress?.reduce((sum, progress) => {
+                    if (progress.courseId === course._id) {
+                      return sum + progress.completedContentCount;
+                    }
+                    return sum;
+                  }, 0) || 0;
+
                 return (
                   <CourseCard
                     key={course._id.toString()}
-                    course={{ ...course, totalLessons: course.lessonCount }} // Pass totalLessons
+                    course={{
+                      ...course,
+                      totalLessons: course.lessonCount,
+                      totalCourseContent: course.totalCourseContent,
+                    }}
                     userPoints={userProfile?.totalPoints || 0}
                     levelPointsThreshold={LEVEL_POINTS_THRESHOLD}
-                    completedLessonsCount={completedLessonsCount}
+                    completedCourseContent={completedCourseContent}
                   />
                 );
               })}
@@ -335,19 +341,24 @@ const Courses = () => {
           {filteredCourses.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredCourses.map((course) => {
-                const completedLessonsCount =
-                  allUserProgress?.filter(
-                    (progress) =>
-                      progress.courseId === course._id &&
-                      progress.completedContentCount > 0
-                  ).length || 0;
+                const completedCourseContent =
+                  allUserProgress?.reduce((sum, progress) => {
+                    if (progress.courseId === course._id) {
+                      return sum + progress.completedContentCount;
+                    }
+                    return sum;
+                  }, 0) || 0;
                 return (
                   <CourseCard
                     key={course._id.toString()}
-                    course={{ ...course, totalLessons: course.lessonCount }}
+                    course={{
+                      ...course,
+                      totalLessons: course.lessonCount,
+                      totalCourseContent: course.totalCourseContent,
+                    }}
                     userPoints={userProfile?.totalPoints || 0}
                     levelPointsThreshold={LEVEL_POINTS_THRESHOLD}
-                    completedLessonsCount={completedLessonsCount}
+                    completedCourseContent={completedCourseContent}
                   />
                 );
               })}

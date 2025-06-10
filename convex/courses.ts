@@ -127,6 +127,13 @@ export const getCourses = query({
               ? await ctx.storage.getUrl(course.imageUrl)
               : null,
           lessonCount: lessons.length,
+          totalCourseContent: lessons.reduce(
+            (sum, lesson) =>
+              sum +
+              (lesson.phrases?.length || 0) +
+              (lesson.sentences?.length || 0),
+            0
+          ),
         };
       })
     );
