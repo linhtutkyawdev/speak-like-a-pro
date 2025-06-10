@@ -37,7 +37,7 @@ const SpeakingPracticeCards: React.FC<SpeakingPracticeCardsProps> = ({
   selectedLanguage,
 }) => {
   return (
-    <div className="px-6 py-4">
+    <div className="px-4 py-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         <div className="grid gap-6">
           {/* Phrase Display Card */}
@@ -62,7 +62,7 @@ const SpeakingPracticeCards: React.FC<SpeakingPracticeCardsProps> = ({
                 )}
               </div>
 
-              <div className="flex justify-center mb-6">
+              <div className="flex flex-col sm:flex-row justify-center mb-6 space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button
                   variant="outline"
                   onClick={handlePlayContent}
@@ -83,7 +83,7 @@ const SpeakingPracticeCards: React.FC<SpeakingPracticeCardsProps> = ({
                     )
                   }
                   disabled={isSoundPlaying} // Disable button while sound is playing
-                  className="flex items-center space-x-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 ml-4" // Added ml-4 for spacing
+                  className="flex items-center space-x-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
                 >
                   <span>
                     Switch to{" "}

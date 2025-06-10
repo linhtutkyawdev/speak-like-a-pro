@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { BookOpen, LogOut, Settings, User } from "lucide-react";
-import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
+import { BookOpen, Settings, User } from "lucide-react";
+import { useClerk, useAuth, useUser, UserButton } from "@clerk/clerk-react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import LoadingSpinner from "./LoadingSpinner"; // Assuming you have a LoadingSpinner component
 
-const AppHeaderRightContent: React.FC = () => {
+const AppHeaderRightContent: React.FC<{ hideUserButton?: boolean }> = ({
+  hideUserButton,
+}) => {
   const { signOut } = useClerk();
+  const { isSignedIn, isLoaded } = useAuth();
   const { user } = useUser();
   const navigate = useNavigate();
 
@@ -29,10 +33,13 @@ const AppHeaderRightContent: React.FC = () => {
     }
   }, [user, userRole, createUser]);
 
-  const handleLogout = async () => {
-    await signOut();
-    navigate("/");
-  };
+  if (!isLoaded) {
+    return <LoadingSpinner />;
+  }
+
+  if (!isSignedIn) {
+    return <Button onClick={() => navigate("/signin")}>Sign In</Button>;
+  }
 
   return (
     <>
@@ -52,7 +59,7 @@ const AppHeaderRightContent: React.FC = () => {
         <BookOpen className="w-4 h-4 mr-2" />
         Browse Courses
       </Button>
-      <UserButton />
+      {!hideUserButton && <UserButton />}
     </>
   );
 };

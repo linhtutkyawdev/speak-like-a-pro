@@ -457,15 +457,15 @@ const SpeakingPractice = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50">
+    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50 flex flex-col">
       <AppHeader rightContent={<AppHeaderRightContent />} />
       {showCompletionScreen && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90 backdrop-blur-sm p-4">
           <Confetti
             width={windowDimensions.width}
             height={windowDimensions.height}
           />
-          <Card className="w-full max-w-md text-center border-emerald-200">
+          <Card className="w-full max-w-md text-center border-emerald-200 mx-auto">
             <CardHeader>
               <CardTitle className="text-3xl font-bold text-emerald-700">
                 {showResetOption ? "Lesson Completed!" : "Congratulations!"}
@@ -477,7 +477,7 @@ const SpeakingPractice = () => {
                   ? "You've completed this lesson. You can reset to practice again or go back to the course."
                   : "Congratulations on completing all the speaking practice content!"}
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   onClick={async () => {
                     setCurrentContentIndex(0);

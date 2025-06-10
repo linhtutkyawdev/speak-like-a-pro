@@ -8,9 +8,8 @@
     "duration": "3 weeks",
     "rating": 4.9,
     "skills": [
-      "Professional & Academic Skills",
-      "Interpersonal Communication",
-      "Negotiation & Transaction"
+      "Professional Communication",
+      "Problem Solving"
     ],
     "featured": true,
     "lessons": [
@@ -18,7 +17,7 @@
         "title": "Lesson 1: The 'Tell Me About Yourself' Opener",
         "sentences": [
           {
-            "text": "I'm a software developer with over five years of experience in the fintech industry.",
+            "text": "I'm a software developer with over 5 years of experience in the fintech industry.",
             "wordCount": 14
           },
           {
@@ -109,7 +108,7 @@
             "wordCount": 10
           },
           {
-            "text": "What does success look like in this position in the first ninety days?",
+            "text": "What does success look like in this position in the first 90 days?",
             "wordCount": 14
           },
           {
@@ -169,7 +168,10 @@
     "level": "advanced",
     "duration": "5 weeks",
     "rating": 4.9,
-    "skills": ["Interpersonal Communication", "Problem Solving & Adaptability"],
+    "skills": [
+      "Professional Communication",
+      "Problem Solving"
+    ],
     "featured": true,
     "lessons": [
       {
@@ -299,9 +301,7 @@
     "duration": "4 weeks",
     "rating": 4.7,
     "skills": [
-      "Professional & Academic Skills",
-      "Problem Solving & Adaptability",
-      "Interpersonal Communication"
+      "Academic English"
     ],
     "featured": false,
     "lessons": [
@@ -342,7 +342,7 @@
             "wordCount": 15
           },
           {
-            "text": "As evidence, consider the statistical data presented on page forty-five.",
+            "text": "As evidence, consider the statistical data presented on page 45.",
             "wordCount": 10
           },
           {
@@ -432,9 +432,8 @@
     "duration": "4 weeks",
     "rating": 4.8,
     "skills": [
-      "Problem Solving & Adaptability",
-      "Negotiation & Transaction",
-      "Interpersonal Communication"
+      "Travel & Services",
+      "Problem Solving"
     ],
     "featured": true,
     "lessons": [
@@ -508,7 +507,7 @@
             "wordCount": 10
           },
           {
-            "text": "Where is the nearest pharmacy that is open twenty-four hours?",
+            "text": "Where is the nearest pharmacy that is open 24 hours?",
             "wordCount": 10
           },
           {
@@ -565,9 +564,8 @@
     "duration": "4 weeks",
     "rating": 4.6,
     "skills": [
-      "Professional & Academic Skills",
-      "Interpersonal Communication",
-      "Storytelling & Presentation"
+      "Professional Communication",
+      "Everyday Conversation"
     ],
     "featured": false,
     "lessons": [
@@ -608,7 +606,7 @@
             "wordCount": 12
           },
           {
-            "text": "The exhibition would feature ten large-scale oil paintings and three installations.",
+            "text": "The exhibition would feature 10 large-scale oil paintings and 3 installations.",
             "wordCount": 11
           },
           {
@@ -641,7 +639,7 @@
             "wordCount": 11
           },
           {
-            "text": "This particular work took about three months to complete from start to finish.",
+            "text": "This particular work took about 3 months to complete from start to finish.",
             "wordCount": 14
           },
           {
@@ -697,7 +695,9 @@
     "level": "beginner",
     "duration": "3 weeks",
     "rating": 4.8,
-    "skills": ["Basic Communication", "Social & Daily Interactions"],
+    "skills": [
+      "Everyday Conversation"
+    ],
     "featured": true,
     "lessons": [
       {
@@ -740,14 +740,14 @@
         "title": "Lesson 3: Numbers, Days, & Time",
         "sentences": [
           { "text": "Today is Monday.", "wordCount": 3 },
-          { "text": "I have two brothers and one sister.", "wordCount": 7 },
-          { "text": "The meeting is at ten o'clock.", "wordCount": 6 },
+          { "text": "I have 2 brothers and 1 sister.", "wordCount": 7 },
+          { "text": "The meeting is at 10 o'clock.", "wordCount": 6 },
           { "text": "Excuse me, what time is it?", "wordCount": 6 }
         ],
         "phrases": [
-          "One, two, three",
+          "1, 2, 3",
           "What time is it?",
-          "It is three thirty",
+          "It is 3:30",
           "Days of the week",
           "Monday, Tuesday, Wednesday",
           "Tomorrow",
@@ -782,7 +782,10 @@
     "level": "beginner",
     "duration": "4 weeks",
     "rating": 4.7,
-    "skills": ["Negotiation & Transaction", "Social & Daily Interactions"],
+    "skills": [
+      "Travel & Services",
+      "Everyday Conversation"
+    ],
     "featured": true,
     "lessons": [
       {
@@ -791,7 +794,7 @@
           { "text": "Where can I find the milk?", "wordCount": 6 },
           { "text": "How much are these apples?", "wordCount": 5 },
           {
-            "text": "I would like two kilos of potatoes, please.",
+            "text": "I would like 2 kilos of potatoes, please.",
             "wordCount": 8
           },
           { "text": "Do you accept credit cards?", "wordCount": 5 }
@@ -833,7 +836,7 @@
           { "text": "Could we have the bill, please?", "wordCount": 6 }
         ],
         "phrases": [
-          "A table for two, please",
+          "A table for 2, please",
           "The menu, please",
           "For here or to go?",
           "With milk and sugar",
@@ -873,7 +876,10 @@
     "level": "beginner",
     "duration": "3 weeks",
     "rating": 4.6,
-    "skills": ["Navigation & Travel", "Social & Daily Interactions"],
+    "skills": [
+      "Travel & Services",
+      "Everyday Conversation"
+    ],
     "featured": false,
     "lessons": [
       {
@@ -897,7 +903,7 @@
       {
         "title": "Lesson 2: Understanding Directions",
         "sentences": [
-          { "text": "Go straight ahead for two blocks.", "wordCount": 6 },
+          { "text": "Go straight ahead for 2 blocks.", "wordCount": 6 },
           { "text": "Turn left at the next corner.", "wordCount": 6 },
           { "text": "The pharmacy is on your right.", "wordCount": 6 },
           { "text": "It's across the street from the park.", "wordCount": 7 }
@@ -933,7 +939,7 @@
       {
         "title": "Lesson 4: Using Public Transport",
         "sentences": [
-          { "text": "One ticket to the city center, please.", "wordCount": 7 },
+          { "text": "1 ticket to the city center, please.", "wordCount": 7 },
           { "text": "Which bus goes to the university?", "wordCount": 6 },
           { "text": "Does this train stop at Grand Central?", "wordCount": 7 },
           { "text": "What is the next stop?", "wordCount": 5 }
@@ -958,7 +964,9 @@
     "level": "beginner",
     "duration": "4 weeks",
     "rating": 4.7,
-    "skills": ["Social & Daily Interactions", "Interpersonal Communication"],
+    "skills": [
+      "Everyday Conversation"
+    ],
     "featured": false,
     "lessons": [
       {
@@ -970,7 +978,7 @@
             "wordCount": 10
           },
           { "text": "This is my friend, Sofia.", "wordCount": 5 },
-          { "text": "How do you two know each other?", "wordCount": 7 }
+          { "text": "How do you 2 know each other?", "wordCount": 7 }
         ],
         "phrases": [
           "Nice to meet you",
@@ -1053,9 +1061,8 @@
     "duration": "4 weeks",
     "rating": 4.8,
     "skills": [
-      "Problem Solving & Adaptability",
-      "Negotiation & Transaction",
-      "Customer Service & Support"
+      "Problem Solving",
+      "Everyday Conversation"
     ],
     "featured": true,
     "lessons": [
@@ -1081,7 +1088,7 @@
         ],
         "phrases": [
           "I'd like to make a return",
-          "It's faulty! It's broken!",
+          "It's faulty or It's broken",
           "Here is the receipt",
           "Under warranty",
           "Exchange for a new one",
@@ -1101,7 +1108,7 @@
             "wordCount": 12
           },
           {
-            "text": "We have been waiting for our food for over forty-five minutes.",
+            "text": "We have been waiting for our food for over 45 minutes.",
             "wordCount": 11
           },
           {
@@ -1189,7 +1196,10 @@
     "level": "intermediate",
     "duration": "4 weeks",
     "rating": 4.7,
-    "skills": ["Health & Wellness", "Interpersonal Communication"],
+    "skills": [
+      "Travel & Services",
+      "Everyday Conversation"
+    ],
     "featured": true,
     "lessons": [
       {
@@ -1320,9 +1330,8 @@
     "duration": "5 weeks",
     "rating": 4.9,
     "skills": [
-      "Home & Living",
-      "Interpersonal Communication",
-      "Problem Solving & Adaptability"
+      "Travel & Services",
+      "Problem Solving"
     ],
     "featured": false,
     "lessons": [
@@ -1330,7 +1339,7 @@
         "title": "Lesson 1: The Apartment Search",
         "sentences": [
           {
-            "text": "I'm calling about the two-bedroom apartment listed online.",
+            "text": "I'm calling about the 2-bedroom apartment listed online.",
             "wordCount": 9
           },
           {
@@ -1372,7 +1381,7 @@
             "wordCount": 12
           },
           {
-            "text": "I would like to give my thirty-day notice to vacate the apartment.",
+            "text": "I would like to give my 30-day notice to vacate the apartment.",
             "wordCount": 12
           }
         ],
@@ -1457,9 +1466,8 @@
     "duration": "3 weeks",
     "rating": 4.6,
     "skills": [
-      "Technology & Digital Literacy",
-      "Problem Solving & Adaptability",
-      "Social & Daily Interactions"
+      "Everyday Conversation",
+      "Problem Solving"
     ],
     "featured": false,
     "lessons": [
@@ -1551,6 +1559,946 @@
           "Tag someone in a photo",
           "Direct message (DM)",
           "Go viral"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Presentation Skills for Professionals",
+    "description": "Learn to deliver powerful presentations in English. From structuring your talk and designing slides to handling Q&A sessions with confidence.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "business",
+    "level": "advanced",
+    "duration": "5 weeks",
+    "rating": 4.8,
+    "skills": [
+      "Professional Communication"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: The Powerful Opening",
+        "sentences": [
+          {
+            "text": "Good morning, everyone. Thank you for being here today.",
+            "wordCount": 8
+          },
+          {
+            "text": "Have you ever wondered why some ideas catch on while others don't?",
+            "wordCount": 12
+          },
+          {
+            "text": "Over the next 20 minutes, we will explore the future of renewable energy.",
+            "wordCount": 13
+          },
+          {
+            "text": "By the end of this presentation, you will understand the 3 key steps to success.",
+            "wordCount": 15
+          }
+        ],
+        "phrases": [
+          "Let's get started",
+          "I'd like to begin by...",
+          "The purpose of my talk is...",
+          "A surprising statistic",
+          "Tell a personal story",
+          "Ask a rhetorical question"
+        ]
+      },
+      {
+        "title": "Lesson 2: Structuring Your Narrative",
+        "sentences": [
+          {
+            "text": "First, I'll provide an overview of the problem we are facing.",
+            "wordCount": 11
+          },
+          {
+            "text": "Next, we will look at 3 potential solutions in detail.",
+            "wordCount": 10
+          },
+          {
+            "text": "This brings me to my main point, which is the need for immediate action.",
+            "wordCount": 14
+          },
+          {
+            "text": "In conclusion, I'd like to summarize the key takeaways.",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "My presentation is divided into 3 parts",
+          "Moving on to the next point...",
+          "To recap...",
+          "In summary...",
+          "That's a good transition to...",
+          "Let's turn our attention to..."
+        ]
+      },
+      {
+        "title": "Lesson 3: Designing Visual Aids",
+        "sentences": [
+          {
+            "text": "As you can see from this chart, sales have increased significantly.",
+            "wordCount": 11
+          },
+          {
+            "text": "This graph illustrates the trend over the last 5 years.",
+            "wordCount": 10
+          },
+          {
+            "text": "Please turn your attention to the diagram on the screen.",
+            "wordCount": 10
+          },
+          {
+            "text": "A picture is worth a thousand words, so let me show you.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "This slide shows...",
+          "The key data point is...",
+          "As illustrated here...",
+          "Keep it simple",
+          "1 idea per slide",
+          "Bullet points"
+        ]
+      },
+      {
+        "title": "Lesson 4: Handling the Q&A Session",
+        "sentences": [
+          {
+            "text": "Thank you, that's an excellent question.",
+            "wordCount": 5
+          },
+          {
+            "text": "I don't have the exact figure, but I can follow up via email.",
+            "wordCount": 13
+          },
+          {
+            "text": "Could you please repeat the question? I didn't quite hear you.",
+            "wordCount": 11
+          },
+          {
+            "text": "If there are no further questions, I'd like to thank you for your time.",
+            "wordCount": 14
+          }
+        ],
+        "phrases": [
+          "Any questions?",
+          "I'm glad you asked that",
+          "That's a great point",
+          "Let me rephrase that",
+          "To be more specific...",
+          "Does that answer your question?"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Cultural Etiquette & Small Talk",
+    "description": "Navigate social situations around the world with grace. Learn key phrases for making small talk, understanding cultural norms, and being a polite guest.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "travel",
+    "level": "intermediate",
+    "duration": "4 weeks",
+    "rating": 4.7,
+    "skills": [
+      "Travel & Services",
+      "Everyday Conversation"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: Mastering Small Talk",
+        "sentences": [
+          {
+            "text": "It's a beautiful day, isn't it?",
+            "wordCount": 6
+          },
+          {
+            "text": "Have you travelled far to get here today?",
+            "wordCount": 8
+          },
+          {
+            "text": "So, what do you do when you're not working?",
+            "wordCount": 9
+          },
+          {
+            "text": "This is my first time at this conference, it's very impressive.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "Lovely weather we're having",
+          "How was your trip?",
+          "Are you enjoying the event?",
+          "What do you do for a living?",
+          "Have you seen any good movies lately?",
+          "Safe topics"
+        ]
+      },
+      {
+        "title": "Lesson 2: Dining Etiquette",
+        "sentences": [
+          {
+            "text": "Should we wait for everyone to be served before we start eating?",
+            "wordCount": 12
+          },
+          {
+            "text": "Could you please pass the salt?",
+            "wordCount": 6
+          },
+          {
+            "text": "Everything was delicious, my compliments to the chef.",
+            "wordCount": 8
+          },
+          {
+            "text": "I'll have what she's having, it looks wonderful.",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "Pass to the right",
+          "Napkin on your lap",
+          "Which fork do I use?",
+          "Cheers! To your health!",
+          "May I see the wine list?",
+          "Splitting the bill"
+        ]
+      },
+      {
+        "title": "Lesson 3: Gift Giving and Invitations",
+        "sentences": [
+          {
+            "text": "Thank you so much for inviting us into your home.",
+            "wordCount": 9
+          },
+          {
+            "text": "We brought you a small token of our appreciation.",
+            "wordCount": 9
+          },
+          {
+            "text": "Oh, you shouldn't have, but thank you so much!",
+            "wordCount": 9
+          },
+          {
+            "text": "Please let me know if I should bring anything to the party.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "Thank you for the invitation",
+          "A hostess gift",
+          "It's just a little something",
+          "RSVP (Please reply)",
+          "Dress code",
+          "Regretfully, I cannot attend"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Effective Email & Report Writing",
+    "description": "Write clear, concise, and professional emails and reports. Learn the right tone, structure, and phrases for requests, updates, and formal communication.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "business",
+    "level": "intermediate",
+    "duration": "4 weeks",
+    "rating": 4.8,
+    "skills": [
+      "Writing Skills",
+      "Professional Communication"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: The Anatomy of a Perfect Email",
+        "sentences": [
+          {
+            "text": "A clear subject line helps the recipient prioritize your message.",
+            "wordCount": 10
+          },
+          {
+            "text": "Always start with a polite and appropriate greeting.",
+            "wordCount": 8
+          },
+          {
+            "text": "The body of your email should be concise and to the point.",
+            "wordCount": 11
+          },
+          {
+            "text": "End your email with a clear call to action and a professional closing.",
+            "wordCount": 13
+          }
+        ],
+        "phrases": [
+          "Clear subject line",
+          "Dear Mr. or Ms. [Last Name]",
+          "Hi [First Name]",
+          "Best regards,",
+          "Sincerely,",
+          "Call to action"
+        ]
+      },
+      {
+        "title": "Lesson 2: Tone and Formality",
+        "sentences": [
+          {
+            "text": "Using formal language is important when writing to a new client.",
+            "wordCount": 11
+          },
+          {
+            "text": "An informal tone is acceptable when communicating with close colleagues.",
+            "wordCount": 10
+          },
+          {
+            "text": "Avoid using slang or excessive exclamation points in professional emails.",
+            "wordCount": 11
+          },
+          {
+            "text": "The tone should be polite and respectful, even when delivering bad news.",
+            "wordCount": 12
+          }
+        ],
+        "phrases": [
+          "Formal or Informal",
+          "I would like to...",
+          "Just wanted to...",
+          "Please find attached...",
+          "I've attached...",
+          "Striking the right tone"
+        ]
+      },
+      {
+        "title": "Lesson 3: Writing for Action and Information",
+        "sentences": [
+          {
+            "text": "Following up on our conversation, I have attached the requested document.",
+            "wordCount": 11
+          },
+          {
+            "text": "Could you please review the proposal and provide feedback by Friday?",
+            "wordCount": 11
+          },
+          {
+            "text": "This is just a quick note to confirm our meeting for 3 PM tomorrow.",
+            "wordCount": 14
+          },
+          {
+            "text": "I am writing to inquire about the status of my recent application.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "I am writing to...",
+          "Following up on...",
+          "For your information (FYI)",
+          "Please let me know if...",
+          "I look forward to hearing from you",
+          "Just a gentle reminder"
+        ]
+      },
+      {
+        "title": "Lesson 4: Structuring a Business Report",
+        "sentences": [
+          {
+            "text": "The executive summary provides a high-level overview of the entire report.",
+            "wordCount": 11
+          },
+          {
+            "text": "The introduction should clearly state the report's purpose and scope.",
+            "wordCount": 10
+          },
+          {
+            "text": "In the findings section, present your data using charts and graphs.",
+            "wordCount": 11
+          },
+          {
+            "text": "The conclusion should summarize the key findings and offer recommendations.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "Executive Summary",
+          "Table of Contents",
+          "Introduction",
+          "Methodology",
+          "Findings and Analysis",
+          "Conclusion and Recommendations"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Parent-Teacher Conference Communication",
+    "description": "Confidently discuss your child's progress at school. Learn how to ask questions, understand feedback, and partner with teachers for your child's success.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "intermediate",
+    "duration": "3 weeks",
+    "rating": 4.9,
+    "skills": [
+      "Everyday Conversation",
+      "Problem Solving"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: Preparing for the Meeting",
+        "sentences": [
+          {
+            "text": "Before the meeting, I made a list of questions to ask.",
+            "wordCount": 11
+          },
+          {
+            "text": "I reviewed my child's recent report card and homework assignments.",
+            "wordCount": 10
+          },
+          {
+            "text": "I want to discuss both her academic strengths and areas for improvement.",
+            "wordCount": 12
+          },
+          {
+            "text": "It's helpful to go in with a positive and collaborative mindset.",
+            "wordCount": 11
+          }
+        ],
+        "phrases": [
+          "Report card",
+          "List of questions",
+          "Areas of concern",
+          "Strengths and weaknesses",
+          "Collaborative approach",
+          "Academic progress"
+        ]
+      },
+      {
+        "title": "Lesson 2: Understanding Teacher Feedback",
+        "sentences": [
+          {
+            "text": "Could you give me a specific example of that behavior in class?",
+            "wordCount": 12
+          },
+          {
+            "text": "When you say he is 'distracted', what does that look like?",
+            "wordCount": 11
+          },
+          {
+            "text": "So, his reading comprehension is good, but his writing needs work.",
+            "wordCount": 11
+          },
+          {
+            "text": "Thank you for that feedback, it's very helpful to know.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "Could you elaborate on that?",
+          "Peer interaction",
+          "Class participation",
+          "Working below grade level",
+          "Exceeding expectations",
+          "Constructive feedback"
+        ]
+      },
+      {
+        "title": "Lesson 3: Creating a Partnership",
+        "sentences": [
+          {
+            "text": "How can we work together to support him at home and at school?",
+            "wordCount": 13
+          },
+          {
+            "text": "What are the most important skills we should focus on at home?",
+            "wordCount": 12
+          },
+          {
+            "text": "I'd like to schedule a follow-up meeting in a few months.",
+            "wordCount": 11
+          },
+          {
+            "text": "Thank you for your dedication to your students.",
+            "wordCount": 8
+          }
+        ],
+        "phrases": [
+          "How can I help at home?",
+          "A consistent approach",
+          "Open line of communication",
+          "Follow-up email",
+          "Working as a team",
+          "Student's success"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Debate & Discussion for Advanced Learners",
+    "description": "Engage in complex discussions and debates with fluency. This course focuses on constructing arguments, providing rebuttals, and using nuanced language.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "academic",
+    "level": "advanced",
+    "duration": "6 weeks",
+    "rating": 4.9,
+    "skills": [
+      "Academic English"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Constructing a Logical Argument",
+        "sentences": [
+          {
+            "text": "The foundation of my argument rests on 3 key premises.",
+            "wordCount": 9
+          },
+          {
+            "text": "The evidence overwhelmingly suggests that this is the most viable course of action.",
+            "wordCount": 13
+          },
+          {
+            "text": "Allow me to present a logical progression from the cause to the effect.",
+            "wordCount": 12
+          },
+          {
+            "text": "My primary assertion is supported by a wealth of empirical data.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "To begin with...",
+          "Furthermore...",
+          "It logically follows that...",
+          "The core of the issue is...",
+          "Let me lay out my case",
+          "A cause-and-effect relationship"
+        ]
+      },
+      {
+        "title": "Lesson 2: The Art of the Rebuttal",
+        "sentences": [
+          {
+            "text": "While I understand your point, the data points to a different conclusion.",
+            "wordCount": 12
+          },
+          {
+            "text": "The previous speaker's argument contains a fundamental logical fallacy.",
+            "wordCount": 9
+          },
+          {
+            "text": "I'd like to address the counterargument that was just raised.",
+            "wordCount": 10
+          },
+          {
+            "text": "That's a common misconception; the reality is actually more complex.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "With all due respect...",
+          "I see your point, however...",
+          "That's not entirely accurate",
+          "The flaw in that argument is...",
+          "To play devil's advocate...",
+          "Let's look at the other side"
+        ]
+      },
+      {
+        "title": "Lesson 3: Using Nuanced Language",
+        "sentences": [
+          {
+            "text": "It's not a black and white issue; there are many shades of gray.",
+            "wordCount": 13
+          },
+          {
+            "text": "We must consider the long-term ramifications of such a policy.",
+            "wordCount": 10
+          },
+          {
+            "text": "Arguably, the socioeconomic factors are the most significant drivers.",
+            "wordCount": 9
+          },
+          {
+            "text": "I would posit that the 2 issues are inextricably linked.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "On the one hand...",
+          "Having said that...",
+          "It's a double-edged sword",
+          "To a certain extent...",
+          "The crux of the matter is...",
+          "It's imperative that we..."
+        ]
+      },
+      {
+        "title": "Lesson 4: Moderating a Discussion",
+        "sentences": [
+          {
+            "text": "Let's try to keep our comments concise so everyone has a chance to speak.",
+            "wordCount": 14
+          },
+          {
+            "text": "That's an interesting point, Sarah. David, what are your thoughts?",
+            "wordCount": 10
+          },
+          {
+            "text": "Let's stick to the topic at hand, we can discuss that later.",
+            "wordCount": 12
+          },
+          {
+            "text": "Thank you all for a very civil and productive discussion.",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "Let's open the floor to questions",
+          "Thank you for your contribution",
+          "Let's move on to the next topic",
+          "To summarize the key points...",
+          "Does anyone have a counterpoint?",
+          "Let's agree to disagree"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Basic Phone Conversations",
+    "description": "Don't be afraid to pick up the phone! Learn the essential phrases for making and answering simple calls, taking messages, and making basic appointments.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "beginner",
+    "duration": "3 weeks",
+    "rating": 4.7,
+    "skills": [
+      "Everyday Conversation"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Answering the Phone",
+        "sentences": [
+          { "text": "Hello, this is David speaking.", "wordCount": 5 },
+          { "text": "Good afternoon, how can I help you?", "wordCount": 7 },
+          { "text": "Who is calling, please?", "wordCount": 4 },
+          { "text": "1 moment, please. I will connect you.", "wordCount": 7 }
+        ],
+        "phrases": [
+          "Hello?",
+          "How can I help you?",
+          "Who's calling?",
+          "Speaking.",
+          "Hold on, please.",
+          "[Company Name], [Your Name] speaking."
+        ]
+      },
+      {
+        "title": "Lesson 2: Making a Call",
+        "sentences": [
+          { "text": "Hello, may I please speak to Sarah?", "wordCount": 7 },
+          { "text": "Hi, I am calling about my appointment.", "wordCount": 7 },
+          { "text": "Is this a good time to talk?", "wordCount": 6 },
+          {
+            "text": "I would like to make a reservation for 2 people.",
+            "wordCount": 10
+          }
+        ],
+        "phrases": [
+          "May I speak to...?",
+          "I'm calling about...",
+          "Is [Name] there?",
+          "This is [Your Name] calling.",
+          "I'd like to make an appointment.",
+          "Could you help me?"
+        ]
+      },
+      {
+        "title": "Lesson 3: Taking a Simple Message",
+        "sentences": [
+          { "text": "I'm sorry, she is not here right now.", "wordCount": 8 },
+          { "text": "Can I take a message for her?", "wordCount": 7 },
+          {
+            "text": "Could you please spell your name for me?",
+            "wordCount": 8
+          },
+          { "text": "I will tell him you called.", "wordCount": 6 }
+        ],
+        "phrases": [
+          "He's not available.",
+          "Can I take a message?",
+          "Can you call back later?",
+          "What is your number?",
+          "Please ask him to call me.",
+          "Thank you, goodbye."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "At the Doctor's Office for Beginners",
+    "description": "Learn essential English for healthcare. This course covers how to make a doctor's appointment, describe common symptoms, and understand simple instructions.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "beginner",
+    "duration": "4 weeks",
+    "rating": 4.8,
+    "skills": [
+      "Travel & Services",
+      "Everyday Conversation"
+    ],
+    "featured": true,
+    "lessons": [
+      {
+        "title": "Lesson 1: Making an Appointment",
+        "sentences": [
+          {
+            "text": "I would like to make an appointment to see a doctor.",
+            "wordCount": 11
+          },
+          {
+            "text": "Do you have anything available on Tuesday morning?",
+            "wordCount": 8
+          },
+          {
+            "text": "My name is Anna and my date of birth is May 5th.",
+            "wordCount": 12
+          },
+          { "text": "Yes, 3 o'clock works for me.", "wordCount": 6 }
+        ],
+        "phrases": [
+          "I need to see a doctor.",
+          "Make an appointment.",
+          "What day is good for you?",
+          "I am a new patient.",
+          "Do you take this insurance?",
+          "Thank you for your help."
+        ]
+      },
+      {
+        "title": "Lesson 2: Describing Common Symptoms",
+        "sentences": [
+          { "text": "I have a headache and a fever.", "wordCount": 7 },
+          { "text": "My throat is sore and I have a cough.", "wordCount": 9 },
+          { "text": "I feel very tired all the time.", "wordCount": 7 },
+          { "text": "My stomach hurts here.", "wordCount": 4 }
+        ],
+        "phrases": [
+          "I don't feel well.",
+          "I have a cold.",
+          "My back hurts.",
+          "I feel sick.",
+          "I have a runny nose.",
+          "I feel dizzy."
+        ]
+      },
+      {
+        "title": "Lesson 3: Understanding the Doctor",
+        "sentences": [
+          { "text": "Where does it hurt?", "wordCount": 4 },
+          { "text": "How long have you had this problem?", "wordCount": 7 },
+          { "text": "I am going to take your temperature.", "wordCount": 7 },
+          { "text": "You need to get some rest.", "wordCount": 6 }
+        ],
+        "phrases": [
+          "Open your mouth.",
+          "Breathe in, breathe out.",
+          "I will give you a prescription.",
+          "Take this medicine.",
+          "Twice a day.",
+          "Drink lots of water."
+        ]
+      },
+      {
+        "title": "Lesson 4: At the Pharmacy",
+        "sentences": [
+          { "text": "I would like to fill this prescription.", "wordCount": 7 },
+          {
+            "text": "How many times a day should I take this?",
+            "wordCount": 9
+          },
+          { "text": "Should I take this with food?", "wordCount": 6 },
+          { "text": "Do you have something for a cough?", "wordCount": 7 }
+        ],
+        "phrases": [
+          "Fill a prescription.",
+          "Painkillers.",
+          "Cough syrup.",
+          "With or without food.",
+          "Side effects.",
+          "Over-the-counter."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Expressing Likes and Dislikes",
+    "description": "A fun and simple course to help you talk about your favorite things. Learn to express what you like and don't like when talking about food, hobbies, and music.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "beginner",
+    "duration": "4 weeks",
+    "rating": 4.6,
+    "skills": [
+      "Everyday Conversation"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Talking About Food",
+        "sentences": [
+          { "text": "I really like pizza and pasta.", "wordCount": 6 },
+          { "text": "I don't like spicy food very much.", "wordCount": 7 },
+          { "text": "My favorite fruit is strawberries.", "wordCount": 5 },
+          { "text": "Do you like chocolate ice cream?", "wordCount": 6 }
+        ],
+        "phrases": [
+          "I like...",
+          "I love...",
+          "I don't like...",
+          "I hate...",
+          "My favorite food is...",
+          "What about you?",
+          "It's delicious!"
+        ]
+      },
+      {
+        "title": "Lesson 2: Hobbies and Activities",
+        "sentences": [
+          { "text": "I enjoy walking in the park.", "wordCount": 6 },
+          {
+            "text": "She loves to read books in her free time.",
+            "wordCount": 9
+          },
+          { "text": "I don't enjoy watching sports on TV.", "wordCount": 7 },
+          { "text": "What do you like to do on weekends?", "wordCount": 8 }
+        ],
+        "phrases": [
+          "I enjoy...",
+          "What are your hobbies?",
+          "In my free time...",
+          "I prefer... to ...",
+          "That sounds fun.",
+          "That sounds boring."
+        ]
+      },
+      {
+        "title": "Lesson 3: Music and Movies",
+        "sentences": [
+          { "text": "My favorite kind of music is pop.", "wordCount": 7 },
+          { "text": "I like watching action movies.", "wordCount": 5 },
+          { "text": "I'm not a big fan of horror films.", "wordCount": 8 },
+          { "text": "Who is your favorite singer?", "wordCount": 5 }
+        ],
+        "phrases": [
+          "What kind of music do you like?",
+          "Who is your favorite...?",
+          "I'm a fan of...",
+          "I can't stand...",
+          "Have you seen...?",
+          "I listen to..."
+        ]
+      },
+      {
+        "title": "Lesson 4: Agreeing and Disagreeing",
+        "sentences": [
+          { "text": "I like coffee. Me too!", "wordCount": 5 },
+          { "text": "I don't like winter. Neither do I.", "wordCount": 7 },
+          { "text": "He likes cats. Oh, I don't.", "wordCount": 6 },
+          {
+            "text": "I love rock music. Really? I prefer classical.",
+            "wordCount": 7
+          }
+        ],
+        "phrases": [
+          "Me too.",
+          "So do I.",
+          "Neither do I.",
+          "Really?",
+          "I agree.",
+          "I disagree.",
+          "Oh, I like it."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Describing People and Things",
+    "description": "Learn the basic words to describe the world around you. This course will teach you simple adjectives for describing people's appearances, feelings, and objects.",
+    "imageUrl": "kg24thagd8vsafd5p34z4jwr857hh47y",
+    "category": "daily",
+    "level": "beginner",
+    "duration": "3 weeks",
+    "rating": 4.5,
+    "skills": [
+      "Everyday Conversation"
+    ],
+    "featured": false,
+    "lessons": [
+      {
+        "title": "Lesson 1: Describing People's Appearance",
+        "sentences": [
+          {
+            "text": "He is very tall and has short brown hair.",
+            "wordCount": 9
+          },
+          { "text": "She has long blonde hair and blue eyes.", "wordCount": 8 },
+          {
+            "text": "My brother is young and my grandfather is old.",
+            "wordCount": 9
+          },
+          { "text": "She is wearing a beautiful red dress.", "wordCount": 7 }
+        ],
+        "phrases": [
+          "Tall or Short",
+          "Young or Old",
+          "Long hair or Short hair",
+          "Blue, Green, or Brown eyes",
+          "He is wearing...",
+          "She looks..."
+        ]
+      },
+      {
+        "title": "Lesson 2: Describing Objects",
+        "sentences": [
+          { "text": "My bag is new and your bag is old.", "wordCount": 9 },
+          {
+            "text": "This is a big house with a small garden.",
+            "wordCount": 9
+          },
+          {
+            "text": "My phone is black and your phone is white.",
+            "wordCount": 9
+          },
+          {
+            "text": "The box is heavy, and the feather is light.",
+            "wordCount": 9
+          }
+        ],
+        "phrases": [
+          "Big or Small",
+          "New or Old",
+          "Heavy or Light",
+          "Expensive or Cheap",
+          "What color is it?",
+          "What is it like?"
+        ]
+      },
+      {
+        "title": "Lesson 3: Describing Feelings",
+        "sentences": [
+          { "text": "I am very happy today.", "wordCount": 5 },
+          { "text": "Why are you sad?", "wordCount": 4 },
+          { "text": "I am tired because I worked a lot.", "wordCount": 8 },
+          { "text": "He is angry because he missed the bus.", "wordCount": 8 }
+        ],
+        "phrases": [
+          "Happy or Sad",
+          "Tired or Energetic",
+          "Angry",
+          "Scared",
+          "Surprised",
+          "How are you feeling?"
         ]
       }
     ]

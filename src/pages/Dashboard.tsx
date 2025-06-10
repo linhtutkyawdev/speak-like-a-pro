@@ -10,6 +10,12 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { useNavigate } from "react-router-dom";
 import { Play, Trophy, Target, Clock, Star, List } from "lucide-react"; // Added Star for points, List for lessons
+import {
+  INTERMEDIATE_POINTS_THRESHOLD,
+  ADVANCED_POINTS_THRESHOLD,
+  EXPERT_POINTS_THRESHOLD,
+  BEGINNER_POINTS_THRESHOLD,
+} from "@/lib/constants";
 
 import AppHeader from "@/components/AppHeader";
 import AppHeaderRightContent from "@/components/AppHeaderRightContent";
@@ -17,10 +23,12 @@ import { useUser } from "@clerk/clerk-react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const { user, isLoaded: isUserLoaded } = useUser();
+  const isMobile = useIsMobile();
 
   const userProfile = useQuery(
     api.users.getUserProfile,
@@ -36,14 +44,16 @@ const Dashboard: React.FC = () => {
   const allCourses = useQuery(api.courses.listAllCourses);
 
   const getUserLevel = (points: number) => {
-    if (points >= 10000) {
+    if (points >= EXPERT_POINTS_THRESHOLD) {
+      return "God";
+    } else if (points >= ADVANCED_POINTS_THRESHOLD) {
       return "Advanced";
-    } else if (points >= 5000) {
+    } else if (points >= INTERMEDIATE_POINTS_THRESHOLD) {
       return "Intermediate";
-    } else if (points >= 2000) {
+    } else if (points >= INTERMEDIATE_POINTS_THRESHOLD / 2) {
       return "Beginner";
     } else {
-      return "Novice"; // Or another appropriate starting level
+      return "Novice";
     }
   };
 
@@ -153,68 +163,120 @@ const Dashboard: React.FC = () => {
         </h1>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center">
-                <Trophy className="w-8 h-8 text-green-600 mr-3" />
-                <div>
-                  <p className="text-sm font-medium text-gray-600">
-                    Current Level
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900">
-                    {currentLevel}
-                  </p>
-                </div>
-              </div>
+        <div
+          className={`grid gap-6 mb-8 ${
+            isMobile ? "grid-cols-2 auto-rows-fr" : "grid-cols-1 md:grid-cols-4"
+          }`}
+        >
+          <Card className={isMobile ? "aspect-square" : ""}>
+            <CardContent
+              className={`flex flex-col items-center justify-center h-full ${
+                isMobile ? "p-3" : "p-6"
+              }`}
+            >
+              <Trophy
+                className={`${
+                  isMobile ? "w-6 h-6" : "w-8 h-8"
+                } text-green-600 mb-2`}
+              />
+              <p
+                className={`font-medium text-gray-600 ${
+                  isMobile ? "text-xs" : "text-sm"
+                }`}
+              >
+                Level
+              </p>
+              <p
+                className={`font-bold text-gray-900 ${
+                  isMobile ? "text-lg" : "text-2xl"
+                }`}
+              >
+                {currentLevel}
+              </p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center">
-                <Star className="w-8 h-8 text-yellow-500 mr-3" />
-                <div>
-                  <p className="text-sm font-medium text-gray-600">
-                    Total Points
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900">
-                    {totalPoints}
-                  </p>
-                </div>
-              </div>
+          <Card className={isMobile ? "aspect-square" : ""}>
+            <CardContent
+              className={`flex flex-col items-center justify-center h-full ${
+                isMobile ? "p-3" : "p-6"
+              }`}
+            >
+              <Star
+                className={`${
+                  isMobile ? "w-6 h-6" : "w-8 h-8"
+                } text-yellow-500 mb-2`}
+              />
+              <p
+                className={`font-medium text-gray-600 ${
+                  isMobile ? "text-xs" : "text-sm"
+                }`}
+              >
+                Points
+              </p>
+              <p
+                className={`font-bold text-gray-900 ${
+                  isMobile ? "text-lg" : "text-2xl"
+                }`}
+              >
+                {totalPoints}
+              </p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center">
-                <Target className="w-8 h-8 text-green-600 mr-3" />
-                <div>
-                  <p className="text-sm font-medium text-gray-600">
-                    Lessons Completed
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900">
-                    {completedLessons}/{totalLessons}
-                  </p>
-                </div>
-              </div>
+          <Card className={isMobile ? "aspect-square" : ""}>
+            <CardContent
+              className={`flex flex-col items-center justify-center h-full ${
+                isMobile ? "p-3" : "p-6"
+              }`}
+            >
+              <Target
+                className={`${
+                  isMobile ? "w-6 h-6" : "w-8 h-8"
+                } text-green-600 mb-2`}
+              />
+              <p
+                className={`font-medium text-gray-600 ${
+                  isMobile ? "text-xs" : "text-sm"
+                }`}
+              >
+                Lessons
+              </p>
+              <p
+                className={`font-bold text-gray-900 ${
+                  isMobile ? "text-lg" : "text-2xl"
+                }`}
+              >
+                {completedLessons}/{totalLessons}
+              </p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center">
-                <Clock className="w-8 h-8 text-green-600 mr-3" />
-                <div>
-                  <p className="text-sm font-medium text-gray-600">
-                    Practice Time
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900">
-                    {formatPracticeTime(totalPracticeSeconds)}
-                  </p>
-                </div>
-              </div>
+          <Card className={isMobile ? "aspect-square" : ""}>
+            <CardContent
+              className={`flex flex-col items-center justify-center h-full ${
+                isMobile ? "p-3" : "p-6"
+              }`}
+            >
+              <Clock
+                className={`${
+                  isMobile ? "w-6 h-6" : "w-8 h-8"
+                } text-green-600 mb-2`}
+              />
+              <p
+                className={`font-medium text-gray-600 ${
+                  isMobile ? "text-xs" : "text-sm"
+                }`}
+              >
+                Time
+              </p>
+              <p
+                className={`font-bold text-gray-900 ${
+                  isMobile ? "text-lg" : "text-2xl"
+                }`}
+              >
+                {formatPracticeTime(totalPracticeSeconds)}
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -336,12 +398,12 @@ const Dashboard: React.FC = () => {
                   value={
                     (totalPoints /
                       (currentLevel === "Novice"
-                        ? 2000
+                        ? INTERMEDIATE_POINTS_THRESHOLD
                         : currentLevel === "Beginner"
-                          ? 5000
+                          ? ADVANCED_POINTS_THRESHOLD
                           : currentLevel === "Intermediate"
-                            ? 10000
-                            : 10000)) *
+                            ? EXPERT_POINTS_THRESHOLD
+                            : EXPERT_POINTS_THRESHOLD)) *
                     100
                   }
                   className="w-full mb-2"
@@ -351,12 +413,12 @@ const Dashboard: React.FC = () => {
                   {Math.round(
                     (totalPoints /
                       (currentLevel === "Novice"
-                        ? 2000
+                        ? INTERMEDIATE_POINTS_THRESHOLD
                         : currentLevel === "Beginner"
-                          ? 5000
+                          ? ADVANCED_POINTS_THRESHOLD
                           : currentLevel === "Intermediate"
-                            ? 10000
-                            : 10000)) *
+                            ? EXPERT_POINTS_THRESHOLD
+                            : EXPERT_POINTS_THRESHOLD)) *
                       100
                   )}
                   % to next level)
@@ -365,12 +427,12 @@ const Dashboard: React.FC = () => {
                   Keep practicing to reach{" "}
                   {getUserLevel(
                     (currentLevel === "Novice"
-                      ? 2000
+                      ? INTERMEDIATE_POINTS_THRESHOLD
                       : currentLevel === "Beginner"
-                        ? 5000
+                        ? ADVANCED_POINTS_THRESHOLD
                         : currentLevel === "Intermediate"
-                          ? 10000
-                          : 10000) -
+                          ? EXPERT_POINTS_THRESHOLD
+                          : EXPERT_POINTS_THRESHOLD) -
                       totalPoints +
                       totalPoints
                   )}

@@ -33,12 +33,9 @@ const CourseDetails = () => {
     courseId && isSignedIn ? { courseId: courseId as Id<"courses"> } : undefined
   );
 
-  if (!course) {
-    return (
-      <div className="bg-gradient-to-br from-green-50 via-white to-emerald-50">
-        <LoadingSpinner />
-      </div>
-    );
+  // Ensure all necessary data is loaded before rendering
+  if (!isLoaded || !course || lessons === undefined) {
+    return <LoadingSpinner />;
   }
 
   return (
@@ -59,13 +56,11 @@ const CourseDetails = () => {
           <CardContent className="p-6 md:p-8">
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/3">
-                {course.imageUrl && (
-                  <img
-                    src={course.imageUrl}
-                    alt={course.title}
-                    className="w-full h-auto object-cover rounded-md shadow-md"
-                  />
-                )}
+                <img
+                  src={course.imageUrl || "/default.png"}
+                  alt={course.title}
+                  className="w-full h-auto object-cover rounded-md shadow-md"
+                />
               </div>
               <div className="md:w-2/3 flex flex-col justify-between">
                 <div className="">
@@ -90,11 +85,13 @@ const CourseDetails = () => {
                     </div>
                     <div className="flex items-center text-gray-600">
                       <Clock className="w-5 h-5 mr-1" />
-                      <span className="text-md">{course.duration}</span>
+                      <span className="text-md text-nowrap">
+                        {course.duration}
+                      </span>
                     </div>
                     <div className="flex items-center text-gray-600">
                       <BookOpen className="w-5 h-5 mr-1" />
-                      <span className="text-md">
+                      <span className="text-md text-nowrap">
                         {lessons?.length || 0} lessons
                       </span>
                     </div>
@@ -145,10 +142,7 @@ const CourseDetails = () => {
                             (sum, lesson) =>
                               sum +
                               (lesson.phrases?.length || 0) +
-                              (lesson.sentences?.reduce(
-                                (sum, s) => sum + s.wordCount,
-                                0
-                              ) || 0),
+                              (lesson.sentences?.length || 0),
                             0
                           );
                           const completedCourseContent = allUserProgress.reduce(
@@ -194,7 +188,7 @@ const CourseDetails = () => {
                   key={lesson._id.toString()}
                   className="bg-white shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <CardContent className="p-5 flex items-center justify-between space-x-8">
+                  <CardContent className="p-5 flex flex-col md:flex-row items-start md:items-center justify-between md:space-x-8 space-y-4 md:space-y-0">
                     <div className="flex items-center w-full">
                       <span className="text-lg font-semibold text-green-600 mr-4">
                         {index + 1}.
@@ -225,7 +219,7 @@ const CourseDetails = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="text-green-600 border-green-600 hover:bg-green-50"
+                      className="w-full md:w-auto text-green-600 border-green-600 hover:bg-green-50"
                       onClick={() =>
                         navigate(`/practice/${courseId}/${lesson._id}`)
                       }

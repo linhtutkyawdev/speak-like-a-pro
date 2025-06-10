@@ -9,6 +9,11 @@ import AppHeader from "@/components/AppHeader";
 import AppHeaderRightContent from "@/components/AppHeaderRightContent"; // Import the new component
 import StarRatingInput from "@/components/ui/StarRatingInput"; // Import StarRatingInput
 import {
+  BEGINNER_POINTS_THRESHOLD,
+  INTERMEDIATE_POINTS_THRESHOLD,
+  ADVANCED_POINTS_THRESHOLD,
+} from "@/lib/constants";
+import {
   BookOpen, // Still needed for academic category icon
   Star, // Still needed for featured courses section
   Search,
@@ -20,6 +25,7 @@ import {
 } from "lucide-react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { useAuth } from "@clerk/clerk-react"; // Import useAuth
 
 // Custom hook for debouncing a value
 function useDebounce<T>(value: T, delay: number): T {
@@ -40,12 +46,20 @@ function useDebounce<T>(value: T, delay: number): T {
 
 const Courses = () => {
   const navigate = useNavigate();
+  const { userId } = useAuth(); // Get the current user's ID
   const [searchTerm, setSearchTerm] = useState("");
   const debouncedSearchTerm = useDebounce(searchTerm, 800); // Debounce search term by 800ms
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedLevel, setSelectedLevel] = useState("all");
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]); // New state for skills
   const [selectedRating, setSelectedRating] = useState<number>(0); // New state for rating (0 means no filter)
+
+  // Define point thresholds for course levels
+  const LEVEL_POINTS_THRESHOLD: { [key: string]: number } = {
+    beginner: BEGINNER_POINTS_THRESHOLD, // No points needed for beginner
+    intermediate: INTERMEDIATE_POINTS_THRESHOLD,
+    advanced: ADVANCED_POINTS_THRESHOLD,
+  };
 
   const categories = [
     {
@@ -109,8 +123,19 @@ const Courses = () => {
     minRating: selectedRating > 0 ? selectedRating : undefined, // Pass selected rating
   });
 
-  // Handle loading state
-  if (!courses) {
+  const allUserProgress = useQuery(
+    api.users.listAllUserProgress,
+    userId ? {} : "skip"
+  );
+
+  // Fetch user profile to get totalPoints
+  const userProfile = useQuery(
+    api.users.getUserProfile,
+    userId ? { clerkUserId: userId } : "skip"
+  );
+
+  // Handle loading state for courses and user profile
+  if (!courses || (userId && !userProfile)) {
     return <LoadingSpinner />;
   }
 
@@ -120,6 +145,20 @@ const Courses = () => {
   ).sort(); // Sort skills alphabetically
 
   const filteredCourses = courses || [];
+
+  // Define a custom sort order for levels
+  const levelOrder: { [key: string]: number } = {
+    beginner: 1,
+    intermediate: 2,
+    advanced: 3,
+  };
+
+  // Sort courses by level (low to high)
+  filteredCourses.sort((a, b) => {
+    const orderA = levelOrder[a.level] || 99; // Assign a high number for unknown levels
+    const orderB = levelOrder[b.level] || 99;
+    return orderA - orderB;
+  });
 
   const featuredCourses = courses.filter((course) => course.featured) || [];
 
@@ -178,9 +217,9 @@ const Courses = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row md:items-center gap-4">
             {/* Level Filter */}
-            <div className="flex flex-wrap gap-2 overflow-x-auto">
+            <div className="flex flex-wrap gap-2 overflow-x-auto pb-2">
               <span className="text-gray-600 font-medium py-2">
                 Filter by Level:
               </span>
@@ -202,8 +241,8 @@ const Courses = () => {
             </div>
 
             {/* Rating Filter */}
-            <div className="flex items-center gap-2">
-              <span className="text-gray-600 font-medium">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <span className="text-gray-600 font-medium py-2">
                 Filter by Minimum Rating:
               </span>
               <StarRatingInput
@@ -258,9 +297,23 @@ const Courses = () => {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredCourses.map((course) => (
-                <CourseCard key={course._id.toString()} course={course} />
-              ))}
+              {featuredCourses.map((course) => {
+                const completedLessonsCount =
+                  allUserProgress?.filter(
+                    (progress) =>
+                      progress.courseId === course._id &&
+                      progress.completedContentCount > 0 // Assuming any progress means the lesson is started/completed
+                  ).length || 0;
+                return (
+                  <CourseCard
+                    key={course._id.toString()}
+                    course={{ ...course, totalLessons: course.lessonCount }} // Pass totalLessons
+                    userPoints={userProfile?.totalPoints || 0}
+                    levelPointsThreshold={LEVEL_POINTS_THRESHOLD}
+                    completedLessonsCount={completedLessonsCount}
+                  />
+                );
+              })}
             </div>
           </div>
         )}
@@ -281,9 +334,23 @@ const Courses = () => {
 
           {filteredCourses.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredCourses.map((course) => (
-                <CourseCard key={course._id.toString()} course={course} />
-              ))}
+              {filteredCourses.map((course) => {
+                const completedLessonsCount =
+                  allUserProgress?.filter(
+                    (progress) =>
+                      progress.courseId === course._id &&
+                      progress.completedContentCount > 0
+                  ).length || 0;
+                return (
+                  <CourseCard
+                    key={course._id.toString()}
+                    course={{ ...course, totalLessons: course.lessonCount }}
+                    userPoints={userProfile?.totalPoints || 0}
+                    levelPointsThreshold={LEVEL_POINTS_THRESHOLD}
+                    completedLessonsCount={completedLessonsCount}
+                  />
+                );
+              })}
             </div>
           ) : (
             <div className="text-center py-10">
