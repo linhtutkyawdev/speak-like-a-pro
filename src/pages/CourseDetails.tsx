@@ -119,8 +119,14 @@ const CourseDetails = () => {
                           const totalCourseContent = lessons.reduce(
                             (sum, lesson) =>
                               sum +
-                              (lesson.phrases?.length || 0) +
-                              (lesson.sentences?.length || 0),
+                              (lesson.phrases?.reduce(
+                                (phraseSum, p) => phraseSum + p.wordCount,
+                                0
+                              ) || 0) +
+                              (lesson.sentences?.reduce(
+                                (sentenceSum, s) => sentenceSum + s.wordCount,
+                                0
+                              ) || 0),
                             0
                           );
                           const completedCourseContent = allUserProgress.reduce(
@@ -141,8 +147,14 @@ const CourseDetails = () => {
                           const totalCourseContent = lessons.reduce(
                             (sum, lesson) =>
                               sum +
-                              (lesson.phrases?.length || 0) +
-                              (lesson.sentences?.length || 0),
+                              (lesson.phrases?.reduce(
+                                (phraseSum, p) => phraseSum + p.wordCount,
+                                0
+                              ) || 0) +
+                              (lesson.sentences?.reduce(
+                                (sentenceSum, s) => sentenceSum + s.wordCount,
+                                0
+                              ) || 0),
                             0
                           );
                           const completedCourseContent = allUserProgress.reduce(
@@ -174,7 +186,14 @@ const CourseDetails = () => {
           {lessons && lessons.length > 0 ? (
             lessons.map((lesson, index) => {
               const totalContent =
-                (lesson.phrases?.length || 0) + (lesson.sentences?.length || 0);
+                (lesson.phrases?.reduce(
+                  (phraseSum, p) => phraseSum + p.wordCount,
+                  0
+                ) || 0) +
+                (lesson.sentences?.reduce(
+                  (sentenceSum, s) => sentenceSum + s.wordCount,
+                  0
+                ) || 0);
               const totalLessonPoints = totalContent; // 1 word = 1 point
               const lessonProgress = allUserProgress?.find(
                 (p) => p.lessonId === lesson._id
@@ -198,9 +217,9 @@ const CourseDetails = () => {
                           {lesson.title}
                         </h3>
                         <p className="text-gray-600 text-sm">
-                          {lesson.sentences.length} sentences,{" "}
-                          {lesson.phrases.length} phrases, {totalLessonPoints}{" "}
-                          points
+                          {lesson.sentences.length || 0} sentences,{" "}
+                          {lesson.phrases.length || 0} phrases,{" "}
+                          {totalLessonPoints} total points
                         </p>
                         {isSignedIn && allUserProgress !== undefined && (
                           <div className="text-sm text-gray-500 flex items-center gap-2 w-full">

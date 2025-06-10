@@ -7,7 +7,7 @@ export const createLesson = mutation({
     courseId: v.id("courses"),
     title: v.string(),
     sentences: v.array(v.object({ text: v.string(), wordCount: v.number() })),
-    phrases: v.array(v.string()),
+    phrases: v.array(v.object({ text: v.string(), wordCount: v.number() })),
   },
   handler: async (ctx, args) => {
     const identity = await ctx.auth.getUserIdentity();
@@ -36,11 +36,21 @@ export const createLesson = mutation({
       };
     });
 
+    const phrasesWithWordCount = args.phrases.map((p) => {
+      const cleanedText = p.text
+        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+        .replace(/\s{2,}/g, " ");
+      return {
+        text: p.text,
+        wordCount: cleanedText.split(/\s+/).filter(Boolean).length,
+      };
+    });
+
     const newLessonId = await ctx.db.insert("lessons", {
       courseId: args.courseId,
       title: args.title,
       sentences: sentencesWithWordCount,
-      phrases: args.phrases,
+      phrases: phrasesWithWordCount,
       createdAt: Date.now(),
       updatedAt: Date.now(),
     });
@@ -82,7 +92,9 @@ export const updateLesson = mutation({
     sentences: v.optional(
       v.array(v.object({ text: v.string(), wordCount: v.number() }))
     ),
-    phrases: v.optional(v.array(v.string())),
+    phrases: v.optional(
+      v.array(v.object({ text: v.string(), wordCount: v.number() }))
+    ),
   },
   handler: async (ctx, args) => {
     const identity = await ctx.auth.getUserIdentity();
@@ -100,7 +112,7 @@ export const updateLesson = mutation({
       );
     }
 
-    const { lessonId, sentences, ...rest } = args;
+    const { lessonId, sentences, phrases, ...rest } = args;
     let updates: any = { ...rest, updatedAt: Date.now() };
 
     if (sentences) {
@@ -110,6 +122,18 @@ export const updateLesson = mutation({
           .replace(/\s{2,}/g, " ");
         return {
           text: s.text,
+          wordCount: cleanedText.split(/\s+/).filter(Boolean).length,
+        };
+      });
+    }
+
+    if (phrases) {
+      updates.phrases = phrases.map((p) => {
+        const cleanedText = p.text
+          .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+          .replace(/\s{2,}/g, " ");
+        return {
+          text: p.text,
           wordCount: cleanedText.split(/\s+/).filter(Boolean).length,
         };
       });

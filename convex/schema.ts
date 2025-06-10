@@ -31,7 +31,7 @@ const schema = defineSchema({
     courseId: v.id("courses"),
     title: v.string(), // Add a title for the lesson
     sentences: v.array(v.object({ text: v.string(), wordCount: v.number() })), // Store sentence text and its word count
-    phrases: v.array(v.string()), // Assuming phrases remain as strings for now
+    phrases: v.array(v.object({ text: v.string(), wordCount: v.number() })),
     createdAt: v.number(),
     updatedAt: v.number(),
   })
