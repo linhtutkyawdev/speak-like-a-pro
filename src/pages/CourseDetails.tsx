@@ -123,12 +123,18 @@ const CourseDetails = () => {
                               (lesson.sentences?.length || 0),
                             0
                           );
+
                           const totalCourseContentWordCount = lessons.reduce(
                             (sum, lesson) =>
                               sum +
                               (lesson.phrases?.reduce(
                                 (sentenceSum, p) =>
-                                  sentenceSum + p.split(" ").length,
+                                  sentenceSum +
+                                  p
+                                    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+                                    .replace(/\s{2,}/g, " ")
+                                    .split(/\s+/)
+                                    .filter(Boolean).length,
                                 0
                               ) || 0) +
                               (lesson.sentences?.reduce(

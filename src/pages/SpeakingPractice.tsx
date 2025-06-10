@@ -77,14 +77,6 @@ const SpeakingPractice = () => {
   const [practiceStartTime, setPracticeStartTime] = useState<number | null>(
     null
   ); // State to track practice start time
-  const [speechAttemptStartTime, setSpeechAttemptStartTime] = useState<
-    number | null
-  >(null); // New state to track individual speech attempt start time
-  const [speechAttemptDuration, setSpeechAttemptDuration] = useState<
-    number | null
-  >(null); // New state to store individual speech attempt duration
-  const [totalPracticeSessionSeconds, setTotalPracticeSessionSeconds] =
-    useState(0); // State to accumulate practice time in seconds for the current session
 
   // Initialize practiceMode and currentContentIndex based on lesson content and user progress
   useEffect(() => {
@@ -156,7 +148,7 @@ const SpeakingPractice = () => {
       ? (completedContentCount / totalContentCount) * 100
       : 0;
 
-  const [windowDimensions, setWindowDimensions] = useState({
+  const [windowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
@@ -256,7 +248,6 @@ const SpeakingPractice = () => {
           const endTime = Date.now();
           durationSeconds = Math.round((endTime - practiceStartTime) / 1000); // Convert ms to seconds
           setPracticeStartTime(endTime); // Reset start time for the next content item
-          setTotalPracticeSessionSeconds((prev) => prev + durationSeconds); // Accumulate for session
         }
 
         await updateUserProgressMutation({
@@ -506,7 +497,6 @@ const SpeakingPractice = () => {
                     }
                     setShowCompletionScreen(false); // Hide completion screen after reset
                     setPracticeStartTime(Date.now()); // Reset practice start time
-                    setTotalPracticeSessionSeconds(0); // Reset accumulated session time
                   }}
                   className="border-red-600 text-red-600 hover:bg-red-100 text-lg px-8 py-3 w-full mt-4"
                   variant="outline"
