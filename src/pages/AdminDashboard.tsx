@@ -69,40 +69,40 @@ const AdminDashboard = () => {
   const updateLesson = useMutation(api.lessons.updateLesson);
   const deleteLesson = useMutation(api.lessons.deleteLesson);
 
-  const devTools = useMutation(api.dev_tools.devTools); // Add this line
+  // const devTools = useMutation(api.dev_tools.devTools); // Add this line
 
-  const handleClearAllTables = async () => {
-    if (
-      window.confirm(
-        "Are you sure you want to clear all tables? This cannot be undone."
-      )
-    ) {
-      try {
-        await devTools({ action: "clearAllTables", payload: {} });
-        toast.success("All tables cleared successfully!");
-      } catch (error) {
-        toast.error("Failed to clear tables: " + error.message);
-      }
-    }
-  };
+  // const handleClearAllTables = async () => {
+  //   if (
+  //     window.confirm(
+  //       "Are you sure you want to clear all tables? This cannot be undone."
+  //     )
+  //   ) {
+  //     try {
+  //       await devTools({ action: "clearAllTables", payload: {} });
+  //       toast.success("All tables cleared successfully!");
+  //     } catch (error) {
+  //       toast.error("Failed to clear tables: " + error.message);
+  //     }
+  //   }
+  // };
 
-  const handleSeedCourses = async () => {
-    if (
-      window.confirm(
-        "Are you sure you want to seed courses? This will add new data."
-      )
-    ) {
-      try {
-        const coursesData = await fetch("/data/courses_data.json").then((res) =>
-          res.json()
-        );
-        await devTools({ action: "seedCourses", payload: { coursesData } });
-        toast.success("Courses seeded successfully!");
-      } catch (error) {
-        toast.error("Failed to seed courses: " + error.message);
-      }
-    }
-  };
+  // const handleSeedCourses = async () => {
+  //   if (
+  //     window.confirm(
+  //       "Are you sure you want to seed courses? This will add new data."
+  //     )
+  //   ) {
+  //     try {
+  //       const coursesData = await fetch("/data/courses_data.json").then((res) =>
+  //         res.json()
+  //       );
+  //       await devTools({ action: "seedCourses", payload: { coursesData } });
+  //       toast.success("Courses seeded successfully!");
+  //     } catch (error) {
+  //       toast.error("Failed to seed courses: " + error.message);
+  //     }
+  //   }
+  // };
 
   const [editingCourse, setEditingCourse] = useState<any>(null);
   const getLessonsByCourseId = useQuery(
@@ -314,7 +314,7 @@ const AdminDashboard = () => {
         <h1 className="text-3xl font-bold text-gray-800 mb-6">
           Admin Dashboard
         </h1>
-        <div className="mb-6 flex justify-end space-x-4">
+        {/* <div className="mb-6 flex justify-end space-x-4">
           <Button
             onClick={handleClearAllTables}
             className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-md shadow-md transition-all duration-300 ease-in-out transform hover:scale-105"
@@ -327,7 +327,7 @@ const AdminDashboard = () => {
           >
             Seed Courses (Dev Only)
           </Button>
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {!editingCourse && (
             <CourseListing

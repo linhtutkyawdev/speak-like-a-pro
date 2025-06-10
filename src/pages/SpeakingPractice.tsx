@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useAuth } from "@clerk/clerk-react";
 import { Navigate, useParams } from "react-router-dom";
 import SpeechRecognition, {
@@ -18,7 +19,8 @@ import { useNavigate } from "react-router-dom";
 import AppHeader from "@/components/AppHeader";
 import AppHeaderRightContent from "@/components/AppHeaderRightContent";
 import { Progress } from "@/components/ui/progress"; // Import Progress component
-import { Volume2, VolumeX, ArrowLeft } from "lucide-react"; // Import icons for sound toggle and back arrow
+import { Alert, AlertDescription } from "@/components/ui/alert"; // Import Alert components
+import { Volume2, VolumeX, ArrowLeft, X } from "lucide-react"; // Import icons for sound toggle, back arrow, and close
 
 const SpeakingPractice = () => {
   const { isSignedIn, isLoaded } = useAuth();
@@ -64,7 +66,9 @@ const SpeakingPractice = () => {
   const [showCompletionScreen, setShowCompletionScreen] = useState(false);
   const [showResetOption, setShowResetOption] = useState(false); // New state for reset option
   const [userClickedRecord, setUserClickedRecord] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(true);
+  const isMobile = useIsMobile();
+  const [showMobileWarning, setShowMobileWarning] = useState(false); // New state for mobile warning
+  const [soundEnabled, setSoundEnabled] = useState(!isMobile);
   const [successAudio, setSuccessAudio] = useState<HTMLAudioElement | null>(
     null
   );
@@ -122,8 +126,13 @@ const SpeakingPractice = () => {
         setShowResetOption(false);
         setShowCompletionScreen(false); // Hide completion screen if lesson is not completed
       }
+
+      // Show mobile warning if on mobile and it hasn't been dismissed before
+      if (isMobile && localStorage.getItem("dismissMobileWarning") !== "true") {
+        setShowMobileWarning(true);
+      }
     }
-  }, [lesson, userProgress]);
+  }, [lesson, userProgress, isMobile]);
 
   // Derived state based on lesson and practiceMode
   const contentToPractice =
@@ -552,6 +561,27 @@ const SpeakingPractice = () => {
       )}
       {!showCompletionScreen && (
         <>
+          {isMobile && showMobileWarning && (
+            <Alert className="mb-4 max-w-4xl mx-auto bg-yellow-50 border-yellow-200 text-yellow-800">
+              <AlertDescription className="flex items-center justify-between">
+                <span>
+                  It's recommended to use this feature on a PC for the best
+                  experience.
+                </span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => {
+                    setShowMobileWarning(false);
+                    localStorage.setItem("dismissMobileWarning", "true");
+                  }}
+                  className="text-yellow-800 hover:bg-yellow-100"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              </AlertDescription>
+            </Alert>
+          )}
           <div className="max-w-4xl mx-auto border-emerald-200  bg-white border rounded-lg p-4 my-4">
             <div className="mx-auto flex items-center justify-between mb-2">
               {/* Back to Course Button */}
