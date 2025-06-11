@@ -558,7 +558,7 @@ const Index = () => {
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight">
             <span className="block">Over</span>
-            <span className="block text-yellow-300 drop-shadow-lg">
+            <span className="block text-yellow-300">
               {totalPoints !== undefined ? (
                 `${totalPoints.toLocaleString()} words`
               ) : (
