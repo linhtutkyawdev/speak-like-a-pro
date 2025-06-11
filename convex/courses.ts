@@ -172,6 +172,43 @@ export const getCourse = query({
   },
 });
 
+export const getTotalCourses = query({
+  handler: async (ctx) => {
+    const courses = await ctx.db.query("courses").collect();
+    return courses.length;
+  },
+});
+
+export const getTotalCoursesByLevel = query({
+  args: { level: v.string() },
+  handler: async (ctx, args) => {
+    const courses = await ctx.db
+      .query("courses")
+      .withIndex("by_level", (q) => q.eq("level", args.level))
+      .collect();
+    return courses.length;
+  },
+});
+
+export const getTotalDurationByLevel = query({
+  args: { level: v.string() },
+  handler: async (ctx, args) => {
+    const courses = await ctx.db
+      .query("courses")
+      .withIndex("by_level", (q) => q.eq("level", args.level))
+      .collect();
+
+    let totalMonths = 0;
+    for (const course of courses) {
+      const durationMatch = course.duration.match(/(\d+)\s*months?/i);
+      if (durationMatch && durationMatch[1]) {
+        totalMonths += parseInt(durationMatch[1], 10);
+      }
+    }
+    return totalMonths;
+  },
+});
+
 export const getCourseByTitle = query({
   args: { title: v.string() },
   handler: async (ctx, args) => {

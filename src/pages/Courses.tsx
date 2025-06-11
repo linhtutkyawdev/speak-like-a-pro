@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import {
+  useNavigate,
+  Link,
+  useLocation,
+  useSearchParams,
+} from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -46,13 +51,51 @@ function useDebounce<T>(value: T, delay: number): T {
 
 const Courses = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { userId } = useAuth(); // Get the current user's ID
-  const [searchTerm, setSearchTerm] = useState("");
+
+  // Initialize state from URL params or default values
+  const initialLevel = searchParams.get("level") || "all";
+  const initialCategory = searchParams.get("category") || "all";
+  const initialSearchTerm = searchParams.get("search") || "";
+  const initialSkills = searchParams.get("skills")?.split(",") || [];
+  const initialRating = parseInt(searchParams.get("rating") || "0", 10);
+
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
   const debouncedSearchTerm = useDebounce(searchTerm, 800); // Debounce search term by 800ms
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedLevel, setSelectedLevel] = useState("all");
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]); // New state for skills
-  const [selectedRating, setSelectedRating] = useState<number>(0); // New state for rating (0 means no filter)
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [selectedLevel, setSelectedLevel] = useState(initialLevel);
+  const [selectedSkills, setSelectedSkills] = useState<string[]>(initialSkills); // New state for skills
+  const [selectedRating, setSelectedRating] = useState<number>(initialRating); // New state for rating (0 means no filter)
+
+  // Effect to update URL params when filters change
+  useEffect(() => {
+    const newSearchParams = new URLSearchParams();
+    if (selectedLevel !== "all") {
+      newSearchParams.set("level", selectedLevel);
+    }
+    if (selectedCategory !== "all") {
+      newSearchParams.set("category", selectedCategory);
+    }
+    if (debouncedSearchTerm !== "") {
+      newSearchParams.set("search", debouncedSearchTerm);
+    }
+    if (selectedSkills.length > 0) {
+      newSearchParams.set("skills", selectedSkills.join(","));
+    }
+    if (selectedRating > 0) {
+      newSearchParams.set("rating", selectedRating.toString());
+    }
+    navigate(`?${newSearchParams.toString()}`, { replace: true });
+  }, [
+    selectedLevel,
+    selectedCategory,
+    debouncedSearchTerm,
+    selectedSkills,
+    selectedRating,
+    navigate,
+  ]);
 
   // Define point thresholds for course levels
   const LEVEL_POINTS_THRESHOLD: { [key: string]: number } = {
@@ -191,7 +234,17 @@ const Courses = () => {
               <Input
                 placeholder="Search courses..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setSearchParams((prev) => {
+                    if (e.target.value === "") {
+                      prev.delete("search");
+                    } else {
+                      prev.set("search", e.target.value);
+                    }
+                    return prev;
+                  });
+                }}
                 className="pl-10 h-12 border-2 border-green-200 focus:border-green-500 rounded-xl w-full"
               />
             </div>
@@ -203,7 +256,17 @@ const Courses = () => {
                     selectedCategory === category.id ? "default" : "outline"
                   }
                   size="sm"
-                  onClick={() => setSelectedCategory(category.id)}
+                  onClick={() => {
+                    setSelectedCategory(category.id);
+                    setSearchParams((prev) => {
+                      if (category.id === "all") {
+                        prev.delete("category");
+                      } else {
+                        prev.set("category", category.id);
+                      }
+                      return prev;
+                    });
+                  }}
                   className={`whitespace-nowrap ${
                     selectedCategory === category.id
                       ? `bg-gradient-to-r ${category.color} border-0 text-white`
@@ -228,7 +291,17 @@ const Courses = () => {
                   key={level.id}
                   variant={selectedLevel === level.id ? "default" : "outline"}
                   size="sm"
-                  onClick={() => setSelectedLevel(level.id)}
+                  onClick={() => {
+                    setSelectedLevel(level.id);
+                    setSearchParams((prev) => {
+                      if (level.id === "all") {
+                        prev.delete("level");
+                      } else {
+                        prev.set("level", level.id);
+                      }
+                      return prev;
+                    });
+                  }}
                   className={`whitespace-nowrap ${
                     selectedLevel === level.id
                       ? `bg-gradient-to-r ${level.color} border-0 text-white`
@@ -247,7 +320,17 @@ const Courses = () => {
               </span>
               <StarRatingInput
                 value={selectedRating}
-                onChange={setSelectedRating}
+                onChange={(rating) => {
+                  setSelectedRating(rating);
+                  setSearchParams((prev) => {
+                    if (rating === 0) {
+                      prev.delete("rating");
+                    } else {
+                      prev.set("rating", rating.toString());
+                    }
+                    return prev;
+                  });
+                }}
                 maxStars={5}
                 size={24}
               />
@@ -255,7 +338,13 @@ const Courses = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => setSelectedRating(0)}
+                  onClick={() => {
+                    setSelectedRating(0);
+                    setSearchParams((prev) => {
+                      prev.delete("rating");
+                      return prev;
+                    });
+                  }}
                   className="text-red-500 hover:text-red-700"
                 >
                   Clear
@@ -274,7 +363,20 @@ const Courses = () => {
                 key={skill}
                 variant={selectedSkills.includes(skill) ? "default" : "outline"}
                 size="sm"
-                onClick={() => handleSkillToggle(skill)}
+                onClick={() => {
+                  const newSkills = selectedSkills.includes(skill)
+                    ? selectedSkills.filter((s) => s !== skill)
+                    : [...selectedSkills, skill];
+                  setSelectedSkills(newSkills);
+                  setSearchParams((prev) => {
+                    if (newSkills.length === 0) {
+                      prev.delete("skills");
+                    } else {
+                      prev.set("skills", newSkills.join(","));
+                    }
+                    return prev;
+                  });
+                }}
                 className={`whitespace-nowrap ${
                   selectedSkills.includes(skill)
                     ? `bg-gradient-to-r from-purple-500 to-indigo-500 border-0 text-white`

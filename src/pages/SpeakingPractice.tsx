@@ -582,7 +582,7 @@ const SpeakingPractice = () => {
               </AlertDescription>
             </Alert>
           )}
-          <div className="max-w-4xl mx-auto border-emerald-200  bg-white border rounded-lg p-4 my-4">
+          <div className="max-w-4xl min-w-[20rem] mx-auto border-emerald-200  bg-white border rounded-lg p-4 my-4">
             <div className="mx-auto flex items-center justify-between mb-2">
               {/* Back to Course Button */}
               <Button

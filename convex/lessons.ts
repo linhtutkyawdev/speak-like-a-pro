@@ -65,6 +65,8 @@ export const getLessonsByCourseId = query({
 export const getLesson = query({
   args: { lessonId: v.id("lessons") },
   handler: async (ctx, args) => {
+    // This query should be public, so no authentication check here.
+    // Authentication for progress updates will be handled in mutations.
     return await ctx.db.get(args.lessonId);
   },
 });
@@ -72,6 +74,13 @@ export const getLesson = query({
 export const listAllLessons = query({
   handler: async (ctx) => {
     return await ctx.db.query("lessons").collect();
+  },
+});
+
+export const getTotalLessons = query({
+  handler: async (ctx) => {
+    const lessons = await ctx.db.query("lessons").collect();
+    return lessons.length;
   },
 });
 

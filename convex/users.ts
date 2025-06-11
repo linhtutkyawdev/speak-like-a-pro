@@ -283,3 +283,21 @@ export const updateUserProgress = mutation({
     }
   },
 });
+
+export const getTotalUsers = query({
+  handler: async (ctx) => {
+    const users = await ctx.db.query("users").collect();
+    return users.length;
+  },
+});
+
+export const getTotalPoints = query({
+  handler: async (ctx) => {
+    const users = await ctx.db.query("users").collect();
+    const totalPoints = users.reduce(
+      (sum, user) => sum + (user.totalPoints || 0),
+      0
+    );
+    return totalPoints;
+  },
+});

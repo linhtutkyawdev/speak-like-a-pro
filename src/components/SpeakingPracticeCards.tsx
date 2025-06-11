@@ -65,12 +65,12 @@ const SpeakingPracticeCards: React.FC<SpeakingPracticeCardsProps> = ({
                 )}
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-center mb-6 space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row justify-center mb-0 sm:mb-6 space-y-0 sm:space-x-4">
                 <Button
                   variant="outline"
                   onClick={handlePlayContent}
                   disabled={isSoundPlaying} // Disable button while sound is playing
-                  className="flex items-center space-x-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
+                  className="items-center space-x-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 hidden sm:flex"
                 >
                   <Play className="h-4 w-4" />
                   <span>
@@ -86,7 +86,7 @@ const SpeakingPracticeCards: React.FC<SpeakingPracticeCardsProps> = ({
                     )
                   }
                   disabled={isSoundPlaying} // Disable button while sound is playing
-                  className="flex items-center space-x-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
+                  className="items-center space-x-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 hidden sm:flex"
                 >
                   <span>
                     Switch to{" "}
@@ -186,7 +186,8 @@ const SpeakingPracticeCards: React.FC<SpeakingPracticeCardsProps> = ({
                   onClick={handleResetPractice}
                   className="border-emerald-600 text-emerald-600 hover:bg-emerald-100"
                 >
-                  <RotateCcw className="h-4 w-4 mr-2" /> Reset Practice
+                  <RotateCcw className="h-4 w-4 mr-2" /> Reset{" "}
+                  <span className="hidden sm:inline">Practice</span>
                 </Button>
                 <Button
                   onClick={handleNextContent}

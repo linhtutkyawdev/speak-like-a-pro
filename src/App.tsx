@@ -12,6 +12,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Courses from "./pages/Courses";
 import SpeakingPractice from "./pages/SpeakingPractice";
+import SpeakingPracticeDemo from "./pages/SpeakingPracticeDemo";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserManagement from "./pages/UserManagement";
 import CourseDetails from "./pages/CourseDetails";
@@ -76,6 +77,7 @@ const App = () => (
                 path="/practice/:courseId/:lessonId"
                 element={<SpeakingPractice />}
               />
+              <Route path="/practice-demo" element={<SpeakingPracticeDemo />} />
               <Route path="/admin" element={<AdminRouteGuard />}>
                 <Route index element={<AdminDashboard />} />
                 <Route path="users" element={<UserManagement />} />

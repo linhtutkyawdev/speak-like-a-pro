@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 import {
   Mic,
   BookOpen,
@@ -23,8 +25,28 @@ import {
 } from "lucide-react";
 
 import AppHeader from "@/components/AppHeader";
+import { Skeleton } from "@/components/ui/skeleton";
+
 const Index = () => {
   const navigate = useNavigate();
+
+  const totalCourses = useQuery(api.courses.getTotalCourses);
+  const totalLessons = useQuery(api.lessons.getTotalLessons);
+  const totalUsers = useQuery(api.users.getTotalUsers);
+  const totalPoints = useQuery(api.users.getTotalPoints);
+
+  const beginnerCoursesCount = useQuery(api.courses.getTotalCoursesByLevel, {
+    level: "beginner",
+  });
+  const intermediateCoursesCount = useQuery(
+    api.courses.getTotalCoursesByLevel,
+    {
+      level: "intermediate",
+    }
+  );
+  const advancedCoursesCount = useQuery(api.courses.getTotalCoursesByLevel, {
+    level: "advanced",
+  });
 
   const features = [
     {
@@ -57,8 +79,13 @@ const Index = () => {
       icon: CheckCircle,
       color: "from-emerald-500 to-teal-600",
       accentColor: "from-emerald-100 to-teal-100",
-      courses: 12,
-      duration: "3 months",
+      courses:
+        beginnerCoursesCount !== undefined ? (
+          beginnerCoursesCount
+        ) : (
+          <Skeleton className="h-6 w-12" />
+        ),
+      duration: "1 months",
       skills: ["Basic Grammar", "Essential Vocabulary", "Simple Conversations"],
       emoji: "🌱",
     },
@@ -69,8 +96,13 @@ const Index = () => {
       icon: BookOpen,
       color: "from-blue-500 to-indigo-600",
       accentColor: "from-blue-100 to-indigo-100",
-      courses: 18,
-      duration: "4 months",
+      courses:
+        intermediateCoursesCount !== undefined ? (
+          intermediateCoursesCount
+        ) : (
+          <Skeleton className="h-6 w-12" />
+        ),
+      duration: "2 months",
       skills: ["Complex Grammar", "Business English", "Cultural Context"],
       emoji: "🚀",
     },
@@ -81,8 +113,13 @@ const Index = () => {
       icon: Trophy,
       color: "from-purple-500 to-pink-600",
       accentColor: "from-purple-100 to-pink-100",
-      courses: 24,
-      duration: "6 months",
+      courses:
+        advancedCoursesCount !== undefined ? (
+          advancedCoursesCount
+        ) : (
+          <Skeleton className="h-6 w-12" />
+        ),
+      duration: "3 months",
       skills: [
         "Advanced Grammar",
         "Professional Communication",
@@ -143,22 +180,36 @@ const Index = () => {
   const stats = [
     {
       label: "Happy Learners",
-      value: "10,000+",
+      value:
+        totalUsers !== undefined ? (
+          `${totalUsers}+`
+        ) : (
+          <Skeleton className="h-12 w-24" />
+        ),
     },
     {
-      label: "Hours of Practice",
-      value: "5,000+",
+      label: "Total Courses",
+      value:
+        totalCourses !== undefined ? (
+          `${totalCourses}+`
+        ) : (
+          <Skeleton className="h-12 w-24" />
+        ),
     },
     {
-      label: "Lessons Completed",
-      value: "20,000+",
+      label: "Total Lessons",
+      value:
+        totalLessons !== undefined ? (
+          `${totalLessons}+`
+        ) : (
+          <Skeleton className="h-12 w-24" />
+        ),
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-emerald-100">
       <AppHeader
-        fullWidth={true}
         rightContent={
           <>
             <Button variant="ghost" onClick={() => navigate("/signin")}>
@@ -210,7 +261,7 @@ const Index = () => {
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-3 h-auto border-2 border-green-600 text-green-600 hover:bg-green-50"
-                onClick={() => navigate("/practice")}
+                onClick={() => navigate("/practice-demo")}
               >
                 <Mic className="mr-2 h-5 w-5" />
                 Try Demo
@@ -272,7 +323,7 @@ const Index = () => {
                       className={`p-3 rounded-2xl bg-gradient-to-br ${path.accentColor} group-hover:scale-110 transition-transform duration-300`}
                     >
                       <path.icon
-                        className={`h-8 w-8 bg-gradient-to-br ${path.color} bg-clip-text text-transparent`}
+                        className={`h-6 w-6 bg-gradient-to-br ${path.color} bg-clip-text`}
                       />
                     </div>
                     <div className="text-3xl group-hover:scale-125 transition-transform duration-300">
@@ -329,7 +380,11 @@ const Index = () => {
                   {/* Action Button */}
                   <Button
                     className={`w-full bg-gradient-to-r ${path.color} hover:shadow-lg transform hover:scale-105 transition-all duration-300 group-hover:shadow-2xl`}
-                    onClick={() => navigate("/signup")}
+                    onClick={() =>
+                      navigate(
+                        `/courses?level=${path.name.split(" ")[0].toLowerCase()}`
+                      )
+                    }
                   >
                     <Zap className="mr-2 h-4 w-4" />
                     Start Your Journey
@@ -404,7 +459,11 @@ const Index = () => {
                   <Button
                     className={`w-full bg-gradient-to-r ${course.color} hover:shadow-md transition-all duration-200`}
                     size="sm"
-                    onClick={() => navigate("/signup")}
+                    onClick={() =>
+                      navigate(
+                        `/courses?category=${course.name.split(" ")[0].toLowerCase()}`
+                      )
+                    }
                   >
                     Explore Course
                   </Button>
@@ -478,7 +537,7 @@ const Index = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-16">
+      <section className="py-16 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
@@ -493,22 +552,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-extrabold mb-8">
-            Ready to Speak Like a Pro?
+      {/* Inspiring Stat Section */}
+      <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight">
+            <span className="block">Over</span>
+            <span className="block text-yellow-300 drop-shadow-lg">
+              {totalPoints !== undefined ? (
+                `${totalPoints.toLocaleString()} words`
+              ) : (
+                <Skeleton className="h-12 w-48 mx-auto bg-green-300" />
+              )}
+            </span>
+            <span className="block">
+              have been spoken correctly by our users!
+            </span>
           </h2>
-          <p className="text-xl mb-12">
-            Join our community of learners and start your journey to confident
-            English speaking today.
+          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            Join our community and add your voice to the growing chorus of
+            confident English speakers.
           </p>
           <Button
             size="lg"
-            className="bg-white text-green-700 hover:bg-green-50 hover:shadow-lg transition-shadow duration-300 px-8 py-3 h-auto text-lg"
-            onClick={() => navigate("/signin")}
+            className="mt-8 bg-white text-green-700 hover:bg-green-50 hover:text-green-800 text-lg px-8 py-3 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            onClick={() => navigate("/signup")}
           >
-            Get Started Now
+            <Zap className="mr-2 h-5 w-5" />
+            Start Your Speaking Journey
           </Button>
         </div>
       </section>
