@@ -51,7 +51,7 @@ const SpeakingPracticeCards: React.FC<SpeakingPracticeCardsProps> = ({
             <CardContent>
               <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-6">
                 <p
-                  className="text-xl text-center text-gray-800 leading-relaxed mb-4 flex flex-wrap"
+                  className="text-xl text-gray-800 leading-relaxed mb-4 flex flex-wrap justify-center"
                   style={{ overflowWrap: "break-word", wordWrap: "break-word" }}
                 >
                   {compareTranscriptToPhrase(currentContent, transcript)}
