@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import CourseCard from "@/components/CourseCard";
 import AppHeader from "@/components/AppHeader";
@@ -54,6 +55,7 @@ const Courses = () => {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const { userId } = useAuth(); // Get the current user's ID
+  const { toast } = useToast();
 
   // Initialize state from URL params or default values
   const initialLevel = searchParams.get("level") || "all";
@@ -493,7 +495,14 @@ const Courses = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-green-800 to-emerald-800 text-white hover:from-green-900 hover:to-emerald-900 hover:shadow-lg transform hover:scale-105 transition-all duration-200 px-8 py-3"
-                onClick={() => navigate("/practice")}
+                onClick={() => {
+                  toast({
+                    title: "Please select a course!",
+                    description:
+                      "You need to select a course from the list above to start learning.",
+                    variant: "destructive",
+                  });
+                }}
               >
                 <Zap className="mr-2 h-5 w-5" />
                 Start Learning Now

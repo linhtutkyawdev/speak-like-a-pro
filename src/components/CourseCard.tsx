@@ -50,7 +50,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
       }}
     >
       <Card
-        className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white ${isLocked ? "opacity-70" : ""}`}
+        className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white h-full ${isLocked ? "opacity-70" : ""}`}
       >
         {course.featured && (
           <div className="absolute top-4 right-4 z-10">
@@ -66,7 +66,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
           }`}
         ></div>
 
-        <CardContent className="p-6">
+        <CardContent className="p-6 flex flex-col h-full">
           <div className="flex justify-between items-start mb-4">
             <div className="text-3xl">
               <img
@@ -80,7 +80,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
           <h3 className="text-xl font-bold mb-2 group-hover:text-green-700 transition-colors">
             {course.title}
           </h3>
-          <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+          <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-3 flex-grow">
             {course.description}
           </p>
 

@@ -17,6 +17,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import UserManagement from "./pages/UserManagement";
 import CourseDetails from "./pages/CourseDetails";
 import AdminRouteGuard from "./components/AdminRouteGuard";
+import AuthRouteGuard from "./components/AuthRouteGuard";
 import CertificateView from "./pages/CertificateView";
 import CertificateDetailView from "./pages/CertificateDetailView";
 
@@ -69,25 +70,27 @@ const App = () => (
               <Route path="/courses" element={<Courses />} />
               <Route path="/signin/*" element={<Signin />} />
               <Route path="/signup/*" element={<Signup />} />
-              <Route
-                path="/practice/:courseId"
-                element={<SpeakingPractice />}
-              />
-              <Route
-                path="/practice/:courseId/:lessonId"
-                element={<SpeakingPractice />}
-              />
               <Route path="/practice-demo" element={<SpeakingPracticeDemo />} />
               <Route path="/admin" element={<AdminRouteGuard />}>
                 <Route index element={<AdminDashboard />} />
                 <Route path="users" element={<UserManagement />} />
               </Route>
-              <Route path="/course/:courseId" element={<CourseDetails />} />
-              <Route path="/certificates" element={<CertificateView />} />
-              <Route
-                path="/certificates/:certificateSlug"
-                element={<CertificateDetailView />}
-              />
+              <Route element={<AuthRouteGuard />}>
+                <Route
+                  path="/practice/:courseId"
+                  element={<SpeakingPractice />}
+                />
+                <Route
+                  path="/practice/:courseId/:lessonId"
+                  element={<SpeakingPractice />}
+                />
+                <Route path="/course/:courseId" element={<CourseDetails />} />
+                <Route path="/certificates" element={<CertificateView />} />
+                <Route
+                  path="/certificates/:certificateSlug"
+                  element={<CertificateDetailView />}
+                />
+              </Route>
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

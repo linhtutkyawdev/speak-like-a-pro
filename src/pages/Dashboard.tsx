@@ -350,36 +350,54 @@ const Dashboard: React.FC = () => {
                     </div>
                   ))
                 ) : (
-                  <p className="text-gray-600">
-                    No recent lessons. Start a lesson to see your progress here!
-                  </p>
+                  <div className="flex flex-col items-center justify-center p-6 text-center">
+                    <p className="text-gray-600 mb-4">
+                      No recent lessons. Start a lesson to see your progress
+                      here!
+                    </p>
+                    <Button
+                      className="w-full max-w-xs bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md transition-all duration-300 ease-in-out transform hover:scale-105"
+                      onClick={() => navigate("/courses")}
+                    >
+                      <List className="w-5 h-5 mr-2" />
+                      Browse All Courses
+                    </Button>
+                  </div>
                 )}
               </CardContent>
             </Card>
           </div>
 
           {/* Quick Actions */}
-          <div>
+          <div className="flex flex-col space-y-6">
+            {/* Browse All Courses Card - Always visible */}
+            <Card className="mt-6">
+              <CardHeader>
+                <CardTitle>Explore More</CardTitle>
+                <CardDescription>Discover new learning paths</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md transition-all duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => navigate("/courses")}
+                >
+                  <List className="w-5 h-5 mr-2" />
+                  Browse All Courses
+                </Button>
+              </CardContent>
+            </Card>
+
             <Card>
               <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
-                <CardDescription>Jump into practice</CardDescription>
+                <CardTitle>Your Certificates</CardTitle>
+                <CardDescription>View your achievements</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => navigate("/courses")}
-                >
-                  <Target className="w-4 h-4 mr-2" />
-                  Browse All Courses
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md transition-all duration-300 ease-in-out transform hover:scale-105"
                   onClick={() => navigate("/certificates")}
                 >
-                  <Trophy className="w-4 h-4 mr-2" />
+                  <Trophy className="w-5 h-5 mr-2" />
                   View Certificates
                 </Button>
               </CardContent>
