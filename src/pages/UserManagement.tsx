@@ -33,12 +33,15 @@ interface ClerkUser {
 }
 
 import { Input } from "@/components/ui/input";
+import { deleteUser } from "convex/users";
 
 const UserManagement = () => {
   const navigate = useNavigate();
   const convexUsers = useQuery(api.users.listUsers);
   const listClerkUsers = useAction(api.clerkActions.listClerkUsers);
   const updateUserRole = useMutation(api.users.updateUserRole);
+  const deleteClerkUser = useAction(api.clerkActions.deleteClerkUser);
+  const deleteUser = useMutation(api.users.deleteUser);
   // const getClerkUserById = useQuery(api.users.getClerkUserById); // Not directly used here
 
   const [clerkUsers, setClerkUsers] = useState<ClerkUser[]>([]);
@@ -69,24 +72,37 @@ const UserManagement = () => {
     }
   };
 
+  const handleDeleteUser = async (userId: string) => {
+    try {
+      await deleteClerkUser({ userId });
+      await deleteUser({ clerkUserId: userId });
+      toast.success("User deleted successfully!");
+      // Refresh the user list
+      const users = await listClerkUsers();
+      setClerkUsers(users);
+    } catch (error: any) {
+      toast.error("Failed to delete user: " + error.message);
+    }
+  };
+
   if (loadingClerkUsers || convexUsers === undefined) {
     return <LoadingSpinner />;
   }
 
-  const combinedUsers = clerkUsers
-    .map((clerkUser) => {
-      const convexUser = convexUsers?.find(
-        (u) => u.clerkUserId === clerkUser.id
+  const combinedUsers = convexUsers
+    .map((convexUser) => {
+      const clerkUser = clerkUsers?.find(
+        (u) => u.id === convexUser.clerkUserId
       );
       return {
-        clerkId: clerkUser.id,
-        firstName: clerkUser.firstName,
-        lastName: clerkUser.lastName,
+        clerkId: clerkUser?.id,
+        firstName: clerkUser?.firstName,
+        lastName: clerkUser?.lastName,
         email:
-          clerkUser.emailAddresses && clerkUser.emailAddresses.length > 0
-            ? clerkUser.emailAddresses[0].email_address
+          clerkUser?.emailAddresses && clerkUser?.emailAddresses.length > 0
+            ? clerkUser?.emailAddresses[0].email_address
             : "N/A",
-        profileImageUrl: clerkUser.profileImageUrl,
+        profileImageUrl: clerkUser?.profileImageUrl,
         role: convexUser?.role || "student", // Default to 'student' if no role in Convex
       };
     })
@@ -164,9 +180,6 @@ const UserManagement = () => {
                       {user.email}
                     </TableCell>
                     <TableCell className="py-3 px-4 whitespace-nowrap text-sm text-gray-500">
-                      {user.role}
-                    </TableCell>
-                    <TableCell className="py-3 px-4">
                       <Select
                         value={user.role}
                         onValueChange={(newRole) =>
@@ -182,6 +195,14 @@ const UserManagement = () => {
                           <SelectItem value="student">Student</SelectItem>
                         </SelectContent>
                       </Select>
+                    </TableCell>
+                    <TableCell className="py-3 px-4">
+                      <button
+                        onClick={() => handleDeleteUser(user.clerkId)}
+                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        Delete
+                      </button>
                     </TableCell>
                   </TableRow>
                 ))}
