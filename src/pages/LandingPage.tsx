@@ -243,7 +243,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 via-transparent to-pink-600 animate-pulse-and-spin blur-2xl rounded-full"></div>
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-10 leading-relaxed">
               Master English speaking with our AI-powered platform. Practice
               real conversations, get instant feedback, and build confidence one
               phrase at a time.
