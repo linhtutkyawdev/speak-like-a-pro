@@ -60,14 +60,20 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
   const handleCreateLesson = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingCourse) {
-      alert("Please select a course to add lessons to.");
+      // It's better to avoid alert(). Consider a toast notification library.
+      console.error("Please select a course to add lessons to.");
       return;
     }
     try {
-      const sentencesForConvex = newLesson.sentences.map((s) => ({
-        text: s.text,
-        wordCount: s.wordCount,
-      }));
+      // Filter out empty sentences before submitting
+      const sentencesForConvex = newLesson.sentences
+        .filter((s) => s.text.trim() !== "")
+        .map((s) => ({
+          text: s.text,
+          wordCount: s.wordCount, // Assuming Convex recalculates this
+        }));
+
+      // Filter out empty phrases before submitting
       const phrasesArray = newLesson.phrases
         .map((p) => p.trim())
         .filter(Boolean);
@@ -78,10 +84,10 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
         sentences: sentencesForConvex,
         phrases: phrasesArray,
       });
-      alert("Lesson created successfully!");
-      setNewLesson({ title: "", sentences: [], phrases: [] }); // Keep this as string[] for the UI input
+      console.log("Lesson created successfully!");
+      setNewLesson({ title: "", sentences: [], phrases: [] });
     } catch (error) {
-      alert("Failed to create lesson: " + error.message);
+      console.error("Failed to create lesson: ", error);
     }
   };
 
@@ -89,10 +95,15 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
     e.preventDefault();
     if (!editingLesson) return;
     try {
-      const sentencesForConvex = editingLesson.sentences.map((s) => ({
-        text: s.text,
-        wordCount: s.wordCount,
-      }));
+      // Filter out empty sentences before submitting
+      const sentencesForConvex = editingLesson.sentences
+        .filter((s) => s.text.trim() !== "")
+        .map((s) => ({
+          text: s.text,
+          wordCount: s.wordCount,
+        }));
+
+      // Filter out empty phrases before submitting
       const phrasesArray = editingLesson.phrases
         .map((p) => p.trim())
         .filter(Boolean);
@@ -103,20 +114,21 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
         sentences: sentencesForConvex,
         phrases: phrasesArray,
       });
-      alert("Lesson updated successfully!");
+      console.log("Lesson updated successfully!");
       setEditingLesson(null);
     } catch (error) {
-      alert("Failed to update lesson: " + error.message);
+      console.error("Failed to update lesson: ", error);
     }
   };
 
   const handleDeleteLesson = async (lessonId: Id<"lessons">) => {
-    if (window.confirm("Are you sure you want to delete this lesson?")) {
+    // It's better to use a custom modal/dialog instead of window.confirm
+    if (confirm("Are you sure you want to delete this lesson?")) {
       try {
         await deleteLesson({ lessonId });
-        alert("Lesson deleted successfully!");
+        console.log("Lesson deleted successfully!");
       } catch (error) {
-        alert("Failed to delete lesson: " + error.message);
+        console.error("Failed to delete lesson: ", error);
       }
     }
   };
@@ -130,57 +142,59 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
       </CardHeader>
       <CardContent className="p-6">
         <h3 className="text-xl font-semibold mb-6 text-green-700">
-          Lessons for {editingCourse?.title}
+          Lessons for {editingCourse?.title || "Selected Course"}
         </h3>
-        <Table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
-          <TableHeader className="bg-green-50">
-            <TableRow>
-              <TableHead className="py-3 px-4 text-left text-green-800 font-bold">
-                Title
-              </TableHead>
-              <TableHead className="py-3 px-4 text-left text-green-800 font-bold">
-                Actions
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {getLessonsByCourseId?.map((lesson) => (
-              <TableRow key={lesson._id} className="hover:bg-green-50">
-                <TableCell className="py-3 px-4 font-medium text-gray-800">
-                  {lesson.title}
-                </TableCell>
-                <TableCell className="py-3 px-4">
-                  <Button
-                    onClick={() => {
-                      setEditingLesson({ ...lesson });
-                      setNewLesson({ title: "", sentences: [], phrases: [] });
-                    }}
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm mr-2 transition-colors duration-200"
-                  >
-                    Edit
-                  </Button>
-                  <Button
-                    onClick={async () => handleDeleteLesson(lesson._id)}
-                    className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-200"
-                  >
-                    Delete
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-            {!getLessonsByCourseId ||
-              (getLessonsByCourseId.length === 0 && (
+        <div className="overflow-x-auto">
+            <Table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+            <TableHeader className="bg-green-50">
                 <TableRow>
-                  <TableCell
-                    colSpan={2}
-                    className="text-center py-4 text-gray-500"
-                  >
-                    No lessons found for this course.
-                  </TableCell>
+                <TableHead className="py-3 px-4 text-left text-green-800 font-bold">
+                    Title
+                </TableHead>
+                <TableHead className="py-3 px-4 text-left text-green-800 font-bold">
+                    Actions
+                </TableHead>
                 </TableRow>
-              ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+                {getLessonsByCourseId?.map((lesson) => (
+                <TableRow key={lesson._id} className="hover:bg-green-50">
+                    <TableCell className="py-3 px-4 font-medium text-gray-800">
+                    {lesson.title}
+                    </TableCell>
+                    <TableCell className="py-3 px-4">
+                    <Button
+                        onClick={() => {
+                        setEditingLesson({ ...lesson });
+                        setNewLesson({ title: "", sentences: [], phrases: [] });
+                        }}
+                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm mr-2 transition-colors duration-200"
+                    >
+                        Edit
+                    </Button>
+                    <Button
+                        onClick={async () => handleDeleteLesson(lesson._id)}
+                        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-200"
+                    >
+                        Delete
+                    </Button>
+                    </TableCell>
+                </TableRow>
+                ))}
+                {!getLessonsByCourseId ||
+                (getLessonsByCourseId.length === 0 && (
+                    <TableRow>
+                    <TableCell
+                        colSpan={2}
+                        className="text-center py-4 text-gray-500"
+                    >
+                        No lessons found for this course.
+                    </TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+            </Table>
+        </div>
 
         <h3 className="text-xl font-semibold mt-8 mb-6 text-green-700">
           {editingLesson ? "Edit Lesson" : "Create New Lesson"}
@@ -239,6 +253,7 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
                     }));
               }}
               className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-green-500 focus:ring-green-500"
+              rows={5}
             />
           </div>
           <div>
@@ -250,8 +265,8 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
               name="phrases"
               value={
                 editingLesson
-                  ? editingLesson.phrases.join("\n")
-                  : newLesson.phrases.join("\n")
+                  ? Array.isArray(editingLesson.phrases) ? editingLesson.phrases.join("\n") : ""
+                  : Array.isArray(newLesson.phrases) ? newLesson.phrases.join("\n") : ""
               }
               onChange={(e) => {
                 const phrasesArray = e.target.value.split("\n");
@@ -266,6 +281,7 @@ const LessonManagement: React.FC<LessonManagementProps> = ({
                     }));
               }}
               className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-green-500 focus:ring-green-500"
+              rows={5}
             />
           </div>
           <Button

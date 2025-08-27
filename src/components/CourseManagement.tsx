@@ -90,7 +90,10 @@ const CourseManagement: React.FC<CourseManagementProps> = ({
             />
           </div>
           <div>
-            <Label htmlFor="description" className="text-gray-700 font-medium">
+            <Label
+              htmlFor="description"
+              className="text-gray-700 font-medium"
+            >
               Description
             </Label>
             <Textarea
@@ -170,8 +173,8 @@ const CourseManagement: React.FC<CourseManagementProps> = ({
                   <img
                     src={
                       editingCourse
-                        ? URL.createObjectURL(selectedEditingImageFile)
-                        : URL.createObjectURL(selectedNewImageFile)
+                        ? URL.createObjectURL(selectedEditingImageFile!)
+                        : URL.createObjectURL(selectedNewImageFile!)
                     }
                     alt="Course Preview"
                     className="max-h-full max-w-full object-contain rounded-md shadow-md"
@@ -313,29 +316,28 @@ const CourseManagement: React.FC<CourseManagementProps> = ({
               name="skills"
               value={
                 editingCourse
-                  ? editingCourse.skills?.join(", ")
-                  : newCourse.skills?.join(", ")
+                  ? Array.isArray(editingCourse.skills)
+                    ? editingCourse.skills.join(", ")
+                    : editingCourse.skills || ""
+                  : Array.isArray(newCourse.skills)
+                    ? newCourse.skills.join(", ")
+                    : newCourse.skills || ""
               }
               onChange={(e) =>
                 editingCourse
                   ? setEditingCourse((prev) => ({
                       ...prev,
-                      skills: e.target.value
-                        .split(",")
-                        .map((s) => s.trim())
-                        .filter(Boolean),
+                      skills: e.target.value,
                     }))
                   : setNewCourse((prev) => ({
                       ...prev,
-                      skills: e.target.value
-                        .split(",")
-                        .map((s) => s.trim())
-                        .filter(Boolean),
+                      skills: e.target.value,
                     }))
               }
               className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-green-500 focus:ring-green-500"
             />
           </div>
+
           <div className="flex items-center space-x-2">
             <Input
               id="featured"
